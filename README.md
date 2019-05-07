@@ -82,3 +82,13 @@ print(delivery.clean_physical([Name('Иван Иванов Иванович')]))
 ```python
 print(delivery.clean_phone([Phone('+79999999999')]))
 ```
+
+#### Неблагонадёжный получатель
+```python
+recipient = Recipient(
+    address='Москва, ул. Пушкина 1, 1', 
+    full_name='Иванов Иван Иванович', 
+    phone='+79999999999',
+)
+print(delivery.check_unreliable_recipient([recipient]))
+```

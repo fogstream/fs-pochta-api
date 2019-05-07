@@ -5,7 +5,7 @@ from typing import Dict, List, Optional
 from requests import Request, Session
 
 from .enums import EntryType, MailCategory, MailType, PaymentType, TransportType
-from .helpers import Address, Name, Phone
+from .helpers import Address, Name, Phone, Recipient
 from .utils import clean_data
 
 
@@ -35,6 +35,7 @@ class Delivery:
         res.raise_for_status()
         return res
 
+    # region Данные
     def clean_address(self, addresses: List[Address]) -> Dict:
         """
         Разделяет и помещает сущности переданных адресов (город, улица)
@@ -48,8 +49,7 @@ class Delivery:
         :return: Результат нормализации
         """
         url = f'/1.0/clean/address'
-        data = [{'id': address.id, 'original-address': address.address}
-                for address in addresses]
+        data = [address.raw for address in addresses]
         res = self._request('post', url, data=data)
         return res.json()
 
@@ -64,8 +64,7 @@ class Delivery:
         :return: Результат нормализации
         """
         url = f'/1.0/clean/physical'
-        data = [{'id': name.id, 'original-fio': name.name}
-                for name in names]
+        data = [name.raw for name in names]
         res = self._request('post', url, data=data)
         return res.json()
 
@@ -86,13 +85,13 @@ class Delivery:
         :return: Результат нормализации
         """
         url = '/1.0/clean/phone'
-        data = [{
-            'id': phone.id,
-            'original-phone': phone.phone,
-            'area': phone.area,
-            'place': phone.place,
-            'region': phone.region,
-        } for phone in phone_numbers]
+        data = [phone.raw for phone in phone_numbers]
+        res = self._request('post', url, data=data)
+        return res.json()
+
+    def check_unreliable_recipient(self, recipients: List[Recipient]):
+        url = '/1.0/unreliable-recipient'
+        data = [recipient.raw for recipient in recipients]
         res = self._request('post', url, data=data)
         return res.json()
 
@@ -188,3 +187,5 @@ class Delivery:
         }
         res = self._request('post', url, data=data)
         return res.json()
+
+    # endregion

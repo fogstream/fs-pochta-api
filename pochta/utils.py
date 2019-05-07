@@ -1,4 +1,6 @@
+from abc import ABC, abstractmethod
 from enum import Enum
+from typing import Dict
 from uuid import uuid4
 
 from boltons.iterutils import remap
@@ -9,9 +11,14 @@ class _AutoName(str, Enum):
         return name
 
 
-class _UniqId:
+class _UniqId(ABC):
     def __init__(self):
         self.id = str(uuid4())
+
+    @property
+    @abstractmethod
+    def raw(self) -> Dict:
+        raise NotImplementedError()
 
 
 def clean_data(data):
