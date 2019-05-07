@@ -4,9 +4,8 @@ from typing import Dict, List, Optional
 
 from requests import Request, Session
 
-from helpers import Address, Name, Phone
-
 from .enums import EntryType, MailCategory, MailType, PaymentType, TransportType
+from .helpers import Address, Name, Phone
 from .utils import clean_data
 
 

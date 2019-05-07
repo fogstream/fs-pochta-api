@@ -6,7 +6,7 @@ import sys
 from setuptools import Command, find_packages, setup
 
 # Package meta-data.
-NAME = 'fs-pochta'
+NAME = 'fs-pochta-api'
 DESCRIPTION = 'Библиотека для работы с API Почты России'
 URL = 'https://github.com/fogstream/fs-pochta'
 EMAIL = 'fadeddexofan@gmail.com'
