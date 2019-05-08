@@ -17,7 +17,7 @@ VERSION = None
 REQUIRED = ['requests', 'boltons', 'zeep']
 
 EXTRAS = {
-    'dev': ['isort', 'flake8'],
+    'dev': ['isort', 'flake8', 'pylint'],
 }
 
 # ------------------------------------------------

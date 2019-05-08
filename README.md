@@ -1,6 +1,8 @@
 fs-pochta-api
 ==========
 
+[![PyPI Version](https://img.shields.io/pypi/v/fs-pochta-api.svg)](https://pypi.python.org/pypi/fs-pochta-api)
+
 Описание
 ------------
 Библиотека для работы с API [Почты России](https://www.pochta.ru/support/business/api).

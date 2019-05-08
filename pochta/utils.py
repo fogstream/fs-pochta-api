@@ -7,6 +7,7 @@ from boltons.iterutils import remap
 
 
 class _AutoName(str, Enum):
+    # pylint: disable=no-self-argument,unused-argument
     def _generate_next_value_(name, start, count, last_values):
         return name
 
