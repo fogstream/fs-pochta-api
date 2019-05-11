@@ -52,3 +52,8 @@ class TransportType(_AutoName):
     AVIA = auto()
     COMBINED = auto()
     EXPRESS = auto()
+
+
+class PrintType(_AutoName):
+    PAPER = auto()
+    THERMO = auto()

@@ -25,7 +25,16 @@ class _UniqId(ABC):
 def clean_data(data):
     if isinstance(data, list):
         data = [clean_data(each_data) for each_data in data]
-    else:
+    elif isinstance(data, dict):
         data = remap(data, lambda p, k, v: v is not None)
-
+    else:
+        data = data
     return data
+
+
+class HTTPMethod(str, Enum):
+    GET = 'get'
+    POST = 'post'
+    PUT = 'put'
+    PATCH = 'patch'
+    DELETE = 'delete'

@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 from zeep import CachingClient, Settings
 
@@ -47,3 +47,30 @@ class Tracking:
                 'password': self._password,
             },
         )
+
+    def get_order_events_for_mail(self, barcode: str) -> Dict:
+        """
+        Метод PostalOrderEventsForMail позволяет получить информацию об операциях с
+        наложенным платежом, который связан с конкретным почтовым отправлением.
+        :param barcode: Идентификатор регистрируемого почтового отправления
+        в одном из форматов:
+            - внутрироссийский, состоящий из 14 символов (цифровой);
+            - международный, состоящий из 13 символов (буквенно-цифровой)
+            в формате S10.
+        :return: Список событий
+        """
+        return self._client.service.PostalOrderEventsForMail(
+            PostalOrderEventsForMailInput={
+                'Barcode': barcode,
+            },
+            AuthorizationHeader={
+                'login': self._login,
+                'password': self._password,
+            },
+        )
+
+    def get_ticket(self, bar_codes: List[str]) -> Dict:
+        pass
+
+    def get_history_for_ticket(self, ticket: str) -> Dict:
+        pass

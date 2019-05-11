@@ -25,20 +25,29 @@ $ pip install fs-pochta-api
 2. Доставка (Модуль `pochta.delivery`)
     * [ ] Заказы
     * [ ] Партии
-    * [ ] Документы
-    * [ ] Архив
+    * [x] Документы
+    * [x] Архив
     * [ ] Поиск ОПС
-    * [ ] Долгосрочное хранение
-    * [ ] Настройки
+    * [x] Долгосрочное хранение
+    * [x] Настройки
     * [x] Данные
     
 Примеры
 -------------
 ### Трекинг
-Получение истории отправления
+#### Инициализация клиента
 ```python
 tracker = Tracking('login', 'pass')
+```
+
+#### Получение истории отправления
+```python
 history = tracker.get_history('barcode')
+```
+
+#### Получение информации о наложенном платеже отправления
+```python
+order_events = tracker.get_order_events_for_mail('barcode')
 ```
 
 ### Доставка
@@ -49,7 +58,7 @@ delivery = Delivery('email', 'password','access_token')
 
 #### Расчет стоимости доставки
 ```python
-calc_result = delivery.calc_delivery(
+calc_result = delivery.nogroup.rate_calculate(
     index_from='680000', # Индексы ОПС указанные в ЛК
     index_to='644015',
     mail_category=MailCategory.ORDINARY,
@@ -64,25 +73,20 @@ calc_result = delivery.calc_delivery(
 
 #### Нормализация адреса
 ```python
-result = delivery.clean_address([
+result = delivery.nogroup.normalization_address([
     Address("Москва, Варшавское шоссе, 37"),
     Address("ул. Мясницкая, д. 26, г. Москва, 1")
 ])
 ```
 
-#### Получение баланса
-```python
-print(delivery.balance)
-```
-
 #### Нормализация ФИО
 ```python
-print(delivery.clean_physical([Name('Иван Иванов Иванович')]))
+print(delivery.nogroup.normalization_fio([Name('Иван Иванов Иванович')]))
 ```
 
 #### Нормализация телефона
 ```python
-print(delivery.clean_phone([Phone('+79999999999')]))
+print(delivery.nogroup.normalization_phone([Phone('+79999999999')]))
 ```
 
 #### Неблагонадёжный получатель
@@ -92,5 +96,10 @@ recipient = Recipient(
     full_name='Иванов Иван Иванович', 
     phone='+79999999999',
 )
-print(delivery.check_unreliable_recipient([recipient]))
+print(delivery.nogroup.unreliable_recipient([recipient]))
+```
+
+#### Получение баланса
+```python
+print(delivery.nogroup.counterpart_balance)
 ```
