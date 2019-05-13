@@ -2,7 +2,7 @@ from base64 import b64encode
 
 from requests import Request, Response, Session
 
-from pochta.api import (
+from .api import (
     LTA,
     Archive,
     Batches,
@@ -12,13 +12,26 @@ from pochta.api import (
     Services,
     Settings,
 )
-from pochta.utils import clean_data
+from .utils import clean_data
 
 
 class Delivery:
+    """
+    API клиент сервиса Доставки.
+
+    https://otpravka.pochta.ru/specification
+    """
+
     API_URL = 'https://otpravka-api.pochta.ru'
 
     def __init__(self, login: str, password: str, access_token: str) -> None:
+        """
+        Инициализация API клиента Доставки.
+
+        :param login: Логин от сервиса доставки
+        :param password: Пароль от сервиса доставки
+        :param access_token: Токен авторизации приложения
+        """
         self._access_token = access_token
         self._auth_key = b64encode(f'{login}:{password}'.encode()).decode()
         self._session = Session()
@@ -31,6 +44,15 @@ class Delivery:
         self._session.headers.update(self._headers)
 
     def request(self, method: str, endpoint: str, data=None, **kwargs) -> Response:
+        """
+        Функция для обращения к API методам через протокол HTTP.
+
+        :param method: HTTP метод
+        :param endpoint: Эндпоинт API
+        :param data: Тело запроса
+        :param kwargs: Дополнительные аргументы
+        :return: Ответ API
+        """
         url = f'{self.API_URL}{endpoint}'
         stream = kwargs.pop('stream', False)
         if data:
@@ -43,32 +65,40 @@ class Delivery:
 
     @property
     def archive(self) -> Archive:
+        """Архив."""
         return Archive(self)
 
     @property
     def nogroup(self) -> NoGroup:
+        """Данные."""
         return NoGroup(self)
 
     @property
     def lta(self) -> LTA:
+        """Долгосрочное хранение."""
         return LTA(self)
 
     @property
     def services(self) -> Services:
+        """Поиск ОПС."""
         return Services(self)
 
     @property
     def settings(self) -> Settings:
+        """Настройки."""
         return Settings(self)
 
     @property
     def documents(self) -> Documents:
+        """Документы."""
         return Documents(self)
 
     @property
     def batches(self) -> Batches:
+        """Партии."""
         return Batches(self)
 
     @property
     def orders(self) -> Orders:
+        """Заказы."""
         return Orders(self)

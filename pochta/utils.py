@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from enum import Enum
-from typing import Dict
+from typing import List, Union
 from uuid import uuid4
 
 from boltons.iterutils import remap
@@ -18,11 +18,12 @@ class _UniqId(ABC):
 
     @property
     @abstractmethod
-    def raw(self) -> Dict:
+    def raw(self) -> dict:
         raise NotImplementedError()
 
 
-def clean_data(data):
+def clean_data(data: Union[List, dict]) -> Union[List, dict]:
+    """Метод рекурсивно очищающий словарь или список словарь от ключей со значением None."""
     if isinstance(data, list):
         data = [clean_data(each_data) for each_data in data]
     elif isinstance(data, dict):
@@ -36,5 +37,4 @@ class HTTPMethod(str, Enum):
     GET = 'get'
     POST = 'post'
     PUT = 'put'
-    PATCH = 'patch'
     DELETE = 'delete'
