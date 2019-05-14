@@ -1,11 +1,17 @@
 fs-pochta-api
 ==========
 
+[![PyPI Version](https://img.shields.io/pypi/v/fs-pochta-api.svg)](https://pypi.python.org/pypi/fs-pochta-api)
+
 Описание
 ------------
 Библиотека для работы с API [Почты России](https://www.pochta.ru/support/business/api).
 
-Установка
+Документация
+------------
+[Ссылка]() на документацию библиотеки.
+
+Установка библиотеки
 ------------
 Для работы требуется Python 3.6+
 Для установки используйте [pipenv](http://pipenv.org/) (или pip):
@@ -21,64 +27,12 @@ $ pip install fs-pochta-api
     * [x] Единичный доступ
     * [ ] Пакетный доступ 
 2. Доставка (Модуль `pochta.delivery`)
-    * [ ] Заказы
-    * [ ] Партии
-    * [ ] Документы
-    * [ ] Архив
-    * [ ] Поиск ОПС
-    * [ ] Долгосрочное хранение
-    * [ ] Настройки
+    * [x] Заказы
+    * [x] Партии
+    * [x] Документы
+    * [x] Архив
+    * [x] Поиск ОПС
+    * [x] Долгосрочное хранение
+    * [x] Настройки
     * [x] Данные
-    
-Примеры
--------------
-### Трекинг
-Получение истории отправления
-```python
-tracker = Tracking('login', 'pass')
-history = tracker.get_history('barcode')
-```
 
-### Доставка
-#### Инициализация клиента
-```python
-delivery = Delivery('email', 'password','access_token')
-```
-
-#### Расчет стоимости доставки
-```python
-calc_result = delivery.calc_delivery(
-    index_from='680000', # Индексы ОПС указанные в ЛК
-    index_to='644015',
-    mail_category=MailCategory.ORDINARY,
-    mail_type=MailType.POSTAL_PARCEL,
-    mass=1000,
-    height=2,
-    length=5,
-    width=197,
-    fragile=True
-)
-```
-
-#### Нормализация адреса
-```python
-result = delivery.clean_address([
-    Address("Москва, Варшавское шоссе, 37"),
-    Address("ул. Мясницкая, д. 26, г. Москва, 1")
-])
-```
-
-#### Получение баланса
-```python
-print(delivery.balance)
-```
-
-#### Нормализация ФИО
-```python
-print(delivery.clean_physical([Name('Иван Иванов Иванович')]))
-```
-
-#### Нормализация телефона
-```python
-print(delivery.clean_phone([Phone('+79999999999')]))
-```

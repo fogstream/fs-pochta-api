@@ -8,7 +8,7 @@ from setuptools import Command, find_packages, setup
 # Package meta-data.
 NAME = 'fs-pochta-api'
 DESCRIPTION = 'Библиотека для работы с API Почты России'
-URL = 'https://github.com/fogstream/fs-pochta'
+URL = 'https://github.com/fogstream/fs-pochta-api'
 EMAIL = 'fadeddexofan@gmail.com'
 MAINTAINER = 'fadedDexofan'
 REQUIRES_PYTHON = '>=3.6.0'
@@ -17,7 +17,7 @@ VERSION = None
 REQUIRED = ['requests', 'boltons', 'zeep']
 
 EXTRAS = {
-    # 'for_tests': ['pytest>=4.4.0', 'pytest-cov', 'pytest-xdist'],
+    'dev': ['isort', 'flake8', 'pylint'],
 }
 
 # ------------------------------------------------
@@ -64,8 +64,8 @@ class UploadCommand(Command):
         except OSError:
             pass
 
-        self.status('Building Source and Wheel (universal) distribution…')
-        os.system(f'{sys.executable} setup.py sdist bdist_wheel --universal')
+        self.status('Building Source and Wheel distribution…')
+        os.system(f'{sys.executable} setup.py sdist bdist_wheel')
 
         self.status('Uploading the package to PyPI via Twine…')
         os.system('twine upload dist/*')
@@ -103,7 +103,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: CPython',
     ],
-    keywords=['pochta', 'api', 'wrapper', 'fs-pochta', 'sdk', 'integration',
+    keywords=['pochta', 'api', 'wrapper', 'fs-pochta-api', 'sdk', 'integration',
               'fogstream', 'lib'],
     zip_safe=False,
     cmdclass={

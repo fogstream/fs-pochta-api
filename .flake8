@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 100
+ignore = E501, E203, D100, D101, D104, RST304  # line length, whitespace before ':'
+show-source = true
+enable-extensions=G
+application-import-names = pochta
