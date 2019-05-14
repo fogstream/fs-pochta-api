@@ -1,0 +1,561 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Helpers &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Enums" href="enums.html" />
+    <link rel="prev" title="Tracking" href="tracking.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking.html">Tracking</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Helpers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pochta.helpers">
+<span id="helpers"></span><h1>Helpers<a class="headerlink" href="#module-pochta.helpers" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pochta.helpers.Address">
+<em class="property">class </em><code class="descclassname">pochta.helpers.</code><code class="descname">Address</code><span class="sig-paren">(</span><em>address</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Адрес для нормализации.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>address</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Оригинальный адрес одной строкой</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="pochta.helpers.Address.raw">
+<code class="descname">raw</code><a class="headerlink" href="#pochta.helpers.Address.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Получения словаря для отправки через API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pochta.helpers.CustomsEntry">
+<em class="property">class </em><code class="descclassname">pochta.helpers.</code><code class="descname">CustomsEntry</code><span class="sig-paren">(</span><em>amount</em>, <em>country_code</em>, <em>description</em>, <em>tnved_code</em>, <em>weight</em>, <em>value=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#CustomsEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.CustomsEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вложение.</p>
+<p>Конструктор вложения.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Количество</p></li>
+<li><p><strong>country_code</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Код страны происхождения.</p></li>
+<li><p><strong>description</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование товара</p></li>
+<li><p><strong>tnved_code</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Код ТНВЭД</p></li>
+<li><p><strong>weight</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Вес вложения в граммах</p></li>
+<li><p><strong>value</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Цена товара (вкл. НДС)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="pochta.helpers.CustomsEntry.raw">
+<code class="descname">raw</code><a class="headerlink" href="#pochta.helpers.CustomsEntry.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Представление Таможенного Вложения для использования в конструкторе РПО.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Словарь с данными Вложения</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pochta.helpers.Item">
+<em class="property">class </em><code class="descclassname">pochta.helpers.</code><code class="descname">Item</code><span class="sig-paren">(</span><em>description</em>, <em>quantity</em>, <em>value=None</em>, <em>vat_rate=None</em>, <em>insurance_value=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Item"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Item" title="Permalink to this definition">¶</a></dt>
+<dd><p>Вложение.</p>
+<p>Конструктор вложения.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>description</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование товара</p></li>
+<li><p><strong>quantity</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Количество товара</p></li>
+<li><p><strong>value</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Цена товара (вкл. НДС)</p></li>
+<li><p><strong>vat_rate</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Ставка НДС</p></li>
+<li><p><strong>insurance_value</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Объявленная ценность</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="pochta.helpers.Item.raw">
+<code class="descname">raw</code><a class="headerlink" href="#pochta.helpers.Item.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Представление Вложения для использования в конструкторе РПО.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Словарь с данными Вложения</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pochta.helpers.Name">
+<em class="property">class </em><code class="descclassname">pochta.helpers.</code><code class="descname">Name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Name" title="Permalink to this definition">¶</a></dt>
+<dd><p>ФИО для нормализации.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Оригинальные фамилия, имя , отчество одной строкой</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="pochta.helpers.Name.raw">
+<code class="descname">raw</code><a class="headerlink" href="#pochta.helpers.Name.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Получения словаря для отправки через API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pochta.helpers.Order">
+<em class="property">class </em><code class="descclassname">pochta.helpers.</code><code class="descname">Order</code><span class="sig-paren">(</span><em>mass</em>, <em>order_num</em>, <em>fragile</em>, <em>mail_category=&lt;MailCategory.SIMPLE: 'SIMPLE'&gt;</em>, <em>mail_type=&lt;MailType.POSTAL_PARCEL: 'POSTAL_PARCEL'&gt;</em>, <em>payment=None</em>, <em>payment_method=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Order"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Класс помошник создания РПО.</p>
+<p>Инициализация РПО.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/orders-creating_order">https://otpravka.pochta.ru/specification#/orders-creating_order</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mass</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Вес РПО (в граммах).</p></li>
+<li><p><strong>order_num</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Номер заказа. Внешний идентификатор заказа,
+который формируется отправителем.</p></li>
+<li><p><strong>fragile</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Установлена ли отметка “Осторожно/Хрупкое”?</p></li>
+<li><p><strong>mail_category</strong> (<a class="reference internal" href="enums.html#pochta.enums.MailCategory" title="pochta.enums.MailCategory"><code class="xref py py-class docutils literal notranslate"><span class="pre">MailCategory</span></code></a>) – Категория РПО.</p></li>
+<li><p><strong>mail_type</strong> (<a class="reference internal" href="enums.html#pochta.enums.MailType" title="pochta.enums.MailType"><code class="xref py py-class docutils literal notranslate"><span class="pre">MailType</span></code></a>) – Вид РПО.</p></li>
+<li><p><strong>payment</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Сумма наложенного платежа (копейки).</p></li>
+<li><p><strong>payment_method</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="enums.html#pochta.enums.PaymentType" title="pochta.enums.PaymentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PaymentType</span></code></a>]) – Способ оплаты.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pochta.helpers.Order.add_customs_declaration">
+<code class="descname">add_customs_declaration</code><span class="sig-paren">(</span><em>currency</em>, <em>entries_type</em>, <em>customs_entries</em>, <em>with_certificate=None</em>, <em>with_invoice=None</em>, <em>with_license=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Order.add_customs_declaration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Order.add_customs_declaration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Таможенная декларация (для международных отправлений).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>currency</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Код валюты.</p></li>
+<li><p><strong>entries_type</strong> (<a class="reference internal" href="enums.html#pochta.enums.EntryType" title="pochta.enums.EntryType"><code class="xref py py-class docutils literal notranslate"><span class="pre">EntryType</span></code></a>) – Категория вложения.</p></li>
+<li><p><strong>customs_entries</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#pochta.helpers.CustomsEntry" title="pochta.helpers.CustomsEntry"><code class="xref py py-class docutils literal notranslate"><span class="pre">CustomsEntry</span></code></a>]) – Список вложений</p></li>
+<li><p><strong>with_certificate</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Приложенные документы: сертификат</p></li>
+<li><p><strong>with_invoice</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Приложенные документы: счет-фактура</p></li>
+<li><p><strong>with_license</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Приложенные документы: лицензия</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.helpers.Order.add_items">
+<code class="descname">add_items</code><span class="sig-paren">(</span><em>items</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Order.add_items"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Order.add_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Добавление товарных вложений РПО.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>items</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="#pochta.helpers.Item" title="pochta.helpers.Item"><code class="xref py py-class docutils literal notranslate"><span class="pre">Item</span></code></a>]) – Список вложений</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.helpers.Order.add_services">
+<code class="descname">add_services</code><span class="sig-paren">(</span><em>completeness_checking=None</em>, <em>courier=None</em>, <em>envelope_type=None</em>, <em>delivery_with_cod=False</em>, <em>insurance_value=None</em>, <em>inventory=None</em>, <em>no_return=None</em>, <em>with_order_of_notice=None</em>, <em>with_simple_notice=None</em>, <em>sms_notice_recipient=None</em>, <em>notice_payment_method=None</em>, <em>wo_mail_rank=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Order.add_services"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Order.add_services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Дополнительные параметры РПО.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>completeness_checking</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Признак услуги проверки комплектности.</p></li>
+<li><p><strong>courier</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Отметка “Курьер”</p></li>
+<li><p><strong>envelope_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="enums.html#pochta.enums.EnvelopeType" title="pochta.enums.EnvelopeType"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnvelopeType</span></code></a>]) – Тип конверта - ГОСТ Р 51506-99.</p></li>
+<li><p><strong>delivery_with_cod</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Признак оплаты при получении.</p></li>
+<li><p><strong>insurance_value</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Объявленная ценность</p></li>
+<li><p><strong>inventory</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Наличие описи вложения</p></li>
+<li><p><strong>no_return</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Отметка “Возврату не подлежит”</p></li>
+<li><p><strong>with_order_of_notice</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Отметка ‘С заказным уведомлением’</p></li>
+<li><p><strong>with_simple_notice</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Отметка ‘С простым уведомлением’</p></li>
+<li><p><strong>sms_notice_recipient</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Признак услуги SMS уведомления</p></li>
+<li><p><strong>notice_payment_method</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="enums.html#pochta.enums.PaymentType" title="pochta.enums.PaymentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PaymentType</span></code></a>]) – Способ оплаты уведомления</p></li>
+<li><p><strong>wo_mail_rank</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Отметка “Без разряда”</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pochta.helpers.Order.raw">
+<code class="descname">raw</code><a class="headerlink" href="#pochta.helpers.Order.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Представление РПО для использования в вызовах API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Словарь с данными РПО</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.helpers.Order.set_address">
+<code class="descname">set_address</code><span class="sig-paren">(</span><em>house_to</em>, <em>mail_direct</em>, <em>region_to</em>, <em>place_to</em>, <em>street_to</em>, <em>address_type_to=&lt;AddressType.DEFAULT: 'DEFAULT'&gt;</em>, <em>index_to=None</em>, <em>postoffice_code=None</em>, <em>area_to=None</em>, <em>building_to=None</em>, <em>hotel_to=None</em>, <em>corpus_to=None</em>, <em>slash_to=None</em>, <em>letter_to=None</em>, <em>location_to=None</em>, <em>office_to=None</em>, <em>room_to=None</em>, <em>num_address_type_to=None</em>, <em>raw_address=None</em>, <em>str_index_to=None</em>, <em>vladenie_to=None</em>, <em>transport_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Order.set_address"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Order.set_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Установка адресных данных РПО.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>house_to</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Часть адреса: Номер здания</p></li>
+<li><p><strong>mail_direct</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Код страны.</p></li>
+<li><p><strong>region_to</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Область, регион</p></li>
+<li><p><strong>place_to</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Населенный пункт</p></li>
+<li><p><strong>street_to</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Часть адреса: Улица</p></li>
+<li><p><strong>address_type_to</strong> (<a class="reference internal" href="enums.html#pochta.enums.AddressType" title="pochta.enums.AddressType"><code class="xref py py-class docutils literal notranslate"><span class="pre">AddressType</span></code></a>) – Тип адреса.</p></li>
+<li><p><strong>index_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>]) – Почтовый индекс</p></li>
+<li><p><strong>postoffice_code</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>]) – Индекс места приема</p></li>
+<li><p><strong>area_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Район</p></li>
+<li><p><strong>building_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Часть здания: Строение</p></li>
+<li><p><strong>hotel_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Название гостиницы</p></li>
+<li><p><strong>corpus_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Часть здания: Корпус</p></li>
+<li><p><strong>slash_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Часть здания: Дробь</p></li>
+<li><p><strong>letter_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Часть здания: Литера</p></li>
+<li><p><strong>location_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Микрорайон</p></li>
+<li><p><strong>office_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Часть здания: Офис</p></li>
+<li><p><strong>room_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Часть здания: Номер помещения</p></li>
+<li><p><strong>num_address_type_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Номер для а/я, войсковая часть,
+войсковая часть ЮЯ, полевая почта</p></li>
+<li><p><strong>raw_address</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Необработанный адрес получателя</p></li>
+<li><p><strong>str_index_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Почтовый индекс (буквенно-цифровой)</p></li>
+<li><p><strong>vladenie_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Часть здания: Владение</p></li>
+<li><p><strong>transport_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="enums.html#pochta.enums.TransportType" title="pochta.enums.TransportType"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransportType</span></code></a>]) – Возможный вид транспортировки (для международных отправлений).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.helpers.Order.set_dimensions">
+<code class="descname">set_dimensions</code><span class="sig-paren">(</span><em>height</em>, <em>length</em>, <em>width</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Order.set_dimensions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Order.set_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Добавление линейных размеров.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>height</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Линейная высота (сантиметры)</p></li>
+<li><p><strong>length</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Линейная длина (сантиметры)</p></li>
+<li><p><strong>width</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Линейная ширина (сантиметры)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.helpers.Order.set_recipient">
+<code class="descname">set_recipient</code><span class="sig-paren">(</span><em>given_name</em>, <em>surname</em>, <em>middle_name=None</em>, <em>recipient_name=None</em>, <em>tel_address=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Order.set_recipient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Order.set_recipient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Указать получателя.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>recipient_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Наименование получателя одной строкой (ФИО, наименование организации)</p></li>
+<li><p><strong>given_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Имя получателя</p></li>
+<li><p><strong>surname</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Фамилия получателя</p></li>
+<li><p><strong>middle_name</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Отчество получателя</p></li>
+<li><p><strong>tel_address</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Телефон получателя (может быть обязательным для
+некоторых типов отправлений)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pochta.helpers.Phone">
+<em class="property">class </em><code class="descclassname">pochta.helpers.</code><code class="descname">Phone</code><span class="sig-paren">(</span><em>phone</em>, <em>area=None</em>, <em>place=None</em>, <em>region=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Phone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Phone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Телефон для нормализации.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phone</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Оригинальный номер одной строкой</p></li>
+<li><p><strong>area</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Область/край трелефонного номера</p></li>
+<li><p><strong>place</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Город телефонного номера</p></li>
+<li><p><strong>region</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Регион телефонного номера</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="pochta.helpers.Phone.raw">
+<code class="descname">raw</code><a class="headerlink" href="#pochta.helpers.Phone.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Получения словаря для отправки через API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pochta.helpers.Recipient">
+<em class="property">class </em><code class="descclassname">pochta.helpers.</code><code class="descname">Recipient</code><span class="sig-paren">(</span><em>address</em>, <em>full_name</em>, <em>phone</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pochta/helpers.html#Recipient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.helpers.Recipient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Получатель для проверки благонадежности.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Адрес</p></li>
+<li><p><strong>full_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Полное имя</p></li>
+<li><p><strong>phone</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Телефон</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="pochta.helpers.Recipient.raw">
+<code class="descname">raw</code><a class="headerlink" href="#pochta.helpers.Recipient.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Получения словаря для отправки через API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="enums.html" class="btn btn-neutral float-right" title="Enums" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tracking.html" class="btn btn-neutral float-left" title="Tracking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Использование &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Список изменений" href="changelog.html" />
+    <link rel="prev" title="Установка" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Установка</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Использование</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Трекинг</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Отправка</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Создание отправления</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Расчет стоимости доставки</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Нормализация адреса</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Нормализация ФИО</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Нормализация телефона</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Проверка благонадежности получателя</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Получение баланса</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Использование</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Использование<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Трекинг<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://tracking.pochta.ru/specification">Документация API Трекинга</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Tracking</span>
+
+<span class="n">tracking</span> <span class="o">=</span> <span class="n">Tracking</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)</span>
+
+<span class="n">history</span> <span class="o">=</span> <span class="n">tracking</span><span class="o">.</span><span class="n">get_history</span><span class="p">(</span><span class="s1">&#39;barcode&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Отправка<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification">Документация API Отправки</a></p>
+<div class="section" id="id5">
+<h3>Создание отправления<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Delivery</span>
+<span class="kn">from</span> <span class="nn">pochta.enums</span> <span class="kn">import</span> <span class="n">AddressType</span><span class="p">,</span> <span class="n">TransportType</span>
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="kn">import</span> <span class="n">Order</span>
+
+<span class="n">delivery</span> <span class="o">=</span> <span class="n">Delivery</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">)</span>
+
+<span class="n">order</span> <span class="o">=</span> <span class="n">Order</span><span class="p">(</span>
+    <span class="n">mass</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">order_num</span><span class="o">=</span><span class="s1">&#39;af134qrw124gva&#39;</span><span class="p">,</span>
+    <span class="n">fragile</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">order</span><span class="o">.</span><span class="n">set_address</span><span class="p">(</span>
+    <span class="n">address_type_to</span><span class="o">=</span><span class="n">AddressType</span><span class="o">.</span><span class="n">DEFAULT</span><span class="p">,</span>
+    <span class="n">house_to</span><span class="o">=</span><span class="s1">&#39;37&#39;</span><span class="p">,</span>
+    <span class="n">index_to</span><span class="o">=</span><span class="mi">117105</span><span class="p">,</span>
+    <span class="n">mail_direct</span><span class="o">=</span><span class="mi">643</span><span class="p">,</span>
+    <span class="n">place_to</span><span class="o">=</span><span class="s1">&#39;г Москва&#39;</span><span class="p">,</span>
+    <span class="n">postoffice_code</span><span class="o">=</span><span class="mi">101000</span><span class="p">,</span>
+    <span class="n">region_to</span><span class="o">=</span><span class="s1">&#39;г Москва&#39;</span><span class="p">,</span>
+    <span class="n">street_to</span><span class="o">=</span><span class="s1">&#39;ш Варшавское&#39;</span><span class="p">,</span>
+    <span class="n">transport_type</span><span class="o">=</span><span class="n">TransportType</span><span class="o">.</span><span class="n">SURFACE</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">order</span><span class="o">.</span><span class="n">set_recipient</span><span class="p">(</span>
+    <span class="n">given_name</span><span class="o">=</span><span class="s1">&#39;Иван&#39;</span><span class="p">,</span>
+    <span class="n">surname</span><span class="o">=</span><span class="s1">&#39;Иванов&#39;</span><span class="p">,</span>
+    <span class="n">middle_name</span><span class="o">=</span><span class="s1">&#39;Иванович&#39;</span><span class="p">,</span>
+    <span class="n">tel_address</span><span class="o">=</span><span class="mi">79459562067</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">order</span><span class="o">.</span><span class="n">set_dimensions</span><span class="p">(</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">length</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">73</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">new_shipments</span> <span class="o">=</span> <span class="n">delivery</span><span class="o">.</span><span class="n">orders</span><span class="o">.</span><span class="n">create_order</span><span class="p">([</span><span class="n">order</span><span class="p">])</span>
+<span class="n">new_batch</span> <span class="o">=</span> <span class="n">delivery</span><span class="o">.</span><span class="n">batches</span><span class="o">.</span><span class="n">create_batch</span><span class="p">(</span><span class="n">new_shipments</span><span class="p">[</span><span class="s1">&#39;result_ids&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>Расчет стоимости доставки<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Delivery</span>
+<span class="kn">from</span> <span class="nn">pochta.enums</span> <span class="kn">import</span> <span class="n">MailCategory</span><span class="p">,</span> <span class="n">MailType</span>
+
+<span class="n">delivery</span> <span class="o">=</span> <span class="n">Delivery</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">)</span>
+<span class="n">calc_result</span> <span class="o">=</span> <span class="n">delivery</span><span class="o">.</span><span class="n">nogroup</span><span class="o">.</span><span class="n">calc_delivery_rate</span><span class="p">(</span>
+    <span class="n">index_from</span><span class="o">=</span><span class="s1">&#39;680000&#39;</span><span class="p">,</span> <span class="c1"># Индексы ОПС указанные в ЛК</span>
+    <span class="n">index_to</span><span class="o">=</span><span class="s1">&#39;644015&#39;</span><span class="p">,</span>
+    <span class="n">mail_category</span><span class="o">=</span><span class="n">MailCategory</span><span class="o">.</span><span class="n">ORDINARY</span><span class="p">,</span>
+    <span class="n">mail_type</span><span class="o">=</span><span class="n">MailType</span><span class="o">.</span><span class="n">POSTAL_PARCEL</span><span class="p">,</span>
+    <span class="n">mass</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">197</span><span class="p">,</span>
+    <span class="n">fragile</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>Нормализация адреса<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Delivery</span>
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="kn">import</span> <span class="n">Address</span>
+
+<span class="n">delivery</span> <span class="o">=</span> <span class="n">Delivery</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">delivery</span><span class="o">.</span><span class="n">nogroup</span><span class="o">.</span><span class="n">address_normalization</span><span class="p">([</span>
+    <span class="n">Address</span><span class="p">(</span><span class="s2">&quot;Москва, Варшавское шоссе, 37&quot;</span><span class="p">),</span>
+    <span class="n">Address</span><span class="p">(</span><span class="s2">&quot;ул. Мясницкая, д. 26, г. Москва, 1&quot;</span><span class="p">)</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Нормализация ФИО<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Delivery</span>
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="kn">import</span> <span class="n">Name</span>
+
+<span class="n">delivery</span> <span class="o">=</span> <span class="n">Delivery</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">delivery</span><span class="o">.</span><span class="n">nogroup</span><span class="o">.</span><span class="n">fio_normalization</span><span class="p">([</span><span class="n">Name</span><span class="p">(</span><span class="s1">&#39;Иван Иванов Иванович&#39;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Нормализация телефона<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Delivery</span>
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="kn">import</span> <span class="n">Phone</span>
+
+<span class="n">delivery</span> <span class="o">=</span> <span class="n">Delivery</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">)</span>
+
+<span class="n">phone_1</span> <span class="o">=</span> <span class="n">Phone</span><span class="p">(</span><span class="s1">&#39;+79999999999&#39;</span><span class="p">)</span>
+<span class="n">phone_2</span> <span class="o">=</span> <span class="n">Phone</span><span class="p">(</span><span class="s1">&#39;+79099999999&#39;</span><span class="p">)</span>
+<span class="c1"># ID необходим для установления нужного номера из ответа API если номеров несколько</span>
+<span class="n">phone_1_id</span> <span class="o">=</span> <span class="n">phone_1</span><span class="o">.</span><span class="n">id</span>
+<span class="k">print</span><span class="p">(</span><span class="n">delivery</span><span class="o">.</span><span class="n">nogroup</span><span class="o">.</span><span class="n">phone_normalization</span><span class="p">([</span><span class="n">phone_1</span><span class="p">,</span> <span class="n">phone_2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Проверка благонадежности получателя<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Delivery</span>
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="kn">import</span> <span class="n">Recipient</span>
+
+<span class="n">delivery</span> <span class="o">=</span> <span class="n">Delivery</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">)</span>
+
+<span class="n">recipient</span> <span class="o">=</span> <span class="n">Recipient</span><span class="p">(</span>
+    <span class="n">address</span><span class="o">=</span><span class="s1">&#39;Москва, ул. Пушкина 1, 1&#39;</span><span class="p">,</span>
+    <span class="n">full_name</span><span class="o">=</span><span class="s1">&#39;Иванов Иван Иванович&#39;</span><span class="p">,</span>
+    <span class="n">phone</span><span class="o">=</span><span class="s1">&#39;+79999999999&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">delivery</span><span class="o">.</span><span class="n">nogroup</span><span class="o">.</span><span class="n">check_reliability</span><span class="p">([</span><span class="n">recipient</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>Получение баланса<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pochta</span> <span class="kn">import</span> <span class="n">Delivery</span>
+
+<span class="n">delivery</span> <span class="o">=</span> <span class="n">Delivery</span><span class="p">(</span><span class="s1">&#39;login&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;token&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">delivery</span><span class="o">.</span><span class="n">nogroup</span><span class="o">.</span><span class="n">counterpart_balance</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Список изменений" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Установка" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

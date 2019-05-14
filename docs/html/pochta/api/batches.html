@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Партии &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Документы" href="documents.html" />
+    <link rel="prev" title="Заказы" href="orders.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Заказы</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Партии</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pochta.api.batches">
+<span id="id1"></span><h1>Партии<a class="headerlink" href="#module-pochta.api.batches" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pochta.api.batches.Batches">
+<em class="property">class </em><code class="descclassname">pochta.api.batches.</code><code class="descname">Batches</code><span class="sig-paren">(</span><em>client</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Методы API Партий.</p>
+<p>Используется через объект <a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delivery</span></code></a> или вручную.</p>
+<p>Инициализация API Партий.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><em>Delivery</em></a>) – API клиент Доставки</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pochta.api.batches.Batches.add_orders_to_batch">
+<code class="descname">add_orders_to_batch</code><span class="sig-paren">(</span><em>batch_name</em>, <em>orders</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.add_orders_to_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.add_orders_to_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Добавление заказов в партию.</p>
+<p>Создает массив заказов и помещает непосредственно в партию. Автоматически рассчитывает
+и проставляет плату за пересылку. Каждому заказу автоматически присваивается ШПИ.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-add_orders_to_batch">https://otpravka.pochta.ru/specification#/batches-add_orders_to_batch</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p></li>
+<li><p><strong>orders</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="../helpers.html#pochta.helpers.Order" title="pochta.helpers.Order"><code class="xref py py-class docutils literal notranslate"><span class="pre">Order</span></code></a>]) – Список заказов</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.change_sending_date">
+<code class="descname">change_sending_date</code><span class="sig-paren">(</span><em>batch_name</em>, <em>year</em>, <em>month</em>, <em>day</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.change_sending_date"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.change_sending_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Изменение дня отправки в почтовое отделение.</p>
+<p>Изменяет (устанавливает) новый день отправки в почтовое отделение.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-sending_date">https://otpravka.pochta.ru/specification#/batches-sending_date</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Наименование партии</p></li>
+<li><p><strong>year</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Дата сдачи в почтовое отделение: год</p></li>
+<li><p><strong>month</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Дата сдачи в почтовое отделение: месяц</p></li>
+<li><p><strong>day</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Дата сдачи в почтовое отделение: день</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.create_batch">
+<code class="descname">create_batch</code><span class="sig-paren">(</span><em>shipment_ids</em>, <em>sending_date=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.create_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.create_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Создание партии из N заказов.</p>
+<p>Автоматически создает партию и переносит указанные подготовленные заказы в эту партию.
+Если заказы относятся к разным типам и категориям – создается несколько партий.
+Заказы распределяются по соответствующим партиям.
+Каждому перенесенному заказу автоматически присваивается ШПИ.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-create_batch_from_N_orders">https://otpravka.pochta.ru/specification#/batches-create_batch_from_N_orders</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shipment_ids</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Список внутренних идентификаторов заказов</p></li>
+<li><p><strong>sending_date</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>]) – Дата сдачи в почтовое отделение (yyyy-MM-dd)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.delete_order_from_batch">
+<code class="descname">delete_order_from_batch</code><span class="sig-paren">(</span><em>shipment_ids</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.delete_order_from_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.delete_order_from_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Удаление заказов из партии.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-delete_order_from_batch">https://otpravka.pochta.ru/specification#/batches-delete_order_from_batch</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shipment_ids</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Список внутренних идентификаторов заказов</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.find_batch">
+<code class="descname">find_batch</code><span class="sig-paren">(</span><em>batch_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.find_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.find_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск партии по наименованию.</p>
+<p>Возвращает параметры партии.
+<a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-find_batch">https://otpravka.pochta.ru/specification#/batches-find_batch</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.find_order_by_id">
+<code class="descname">find_order_by_id</code><span class="sig-paren">(</span><em>shipment_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.find_order_by_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.find_order_by_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск заказа в партии по внутреннему id.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-find_order_by_id">https://otpravka.pochta.ru/specification#/batches-find_order_by_id</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shipment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Внутренний идентификатор отправления</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.find_orders_with_barcode">
+<code class="descname">find_orders_with_barcode</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.find_orders_with_barcode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.find_orders_with_barcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск заказов с ШПИ.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-find_orders_with_barcode">https://otpravka.pochta.ru/specification#/batches-find_orders_with_barcode</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>query</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Условие для поиска: номер заказа или ШПИ</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.get_batch_orders_info">
+<code class="descname">get_batch_orders_info</code><span class="sig-paren">(</span><em>batch_name</em>, <em>sort='asc'</em>, <em>size=None</em>, <em>page=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.get_batch_orders_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.get_batch_orders_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Запрос данных о заказах в партии.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-get_info_about_orders_in_batch">https://otpravka.pochta.ru/specification#/batches-get_info_about_orders_in_batch</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p></li>
+<li><p><strong>sort</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Критерии сортировки в формате: asc(по возрастанию) или desc (по убыванию).
+По умолчанию порядок сортировки по возрастанию</p></li>
+<li><p><strong>size</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Количество записей на странице</p></li>
+<li><p><strong>page</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Номер страницы (0..N)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.move_orders_to_batch">
+<code class="descname">move_orders_to_batch</code><span class="sig-paren">(</span><em>batch_name</em>, <em>shipment_ids</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.move_orders_to_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.move_orders_to_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Перенос заказов в партию.</p>
+<p>Переносит подготовленные заказы в указанную партию.
+Если часть заказов не может быть помещена в партию (тип и категория партии
+не соответствует типу и категории заказа) - возвращается json объект с указанием индекса
+заказа в переданном массиве и типом ошибки, остальные заказы помещаются в указанную партию.
+Каждому перенесенному заказу автоматически присваивается ШПИ.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-move_orders_to_batch">https://otpravka.pochta.ru/specification#/batches-move_orders_to_batch</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p></li>
+<li><p><strong>shipment_ids</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Список внутренних идентификаторов заказов</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.batches.Batches.search_all_batches">
+<code class="descname">search_all_batches</code><span class="sig-paren">(</span><em>mail_type=None</em>, <em>mail_category=None</em>, <em>sort='asc'</em>, <em>size=None</em>, <em>page=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/batches.html#Batches.search_all_batches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.batches.Batches.search_all_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Поиск всех партий.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/batches-search_all_batches">https://otpravka.pochta.ru/specification#/batches-search_all_batches</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mail_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.MailType" title="pochta.enums.MailType"><code class="xref py py-class docutils literal notranslate"><span class="pre">MailType</span></code></a>]) – Тип отправления (По умолчанию: ВСЕ)</p></li>
+<li><p><strong>mail_category</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.MailCategory" title="pochta.enums.MailCategory"><code class="xref py py-class docutils literal notranslate"><span class="pre">MailCategory</span></code></a>]) – Категория отправления (По умолчанию: ВСЕ)</p></li>
+<li><p><strong>sort</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Критерии сортировки в формате: asc(по возрастанию) или desc (по убыванию).
+По умолчанию порядок сортировки по возрастанию</p></li>
+<li><p><strong>size</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Количество записей на странице</p></li>
+<li><p><strong>page</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Номер страницы (0..N)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="documents.html" class="btn btn-neutral float-right" title="Документы" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="orders.html" class="btn btn-neutral float-left" title="Заказы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

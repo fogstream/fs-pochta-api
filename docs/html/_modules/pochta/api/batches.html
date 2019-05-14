@@ -1,0 +1,441 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.api.batches &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.api.batches</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.api.batches</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">pochta.enums</span> <span class="k">import</span> <span class="n">MailCategory</span><span class="p">,</span> <span class="n">MailType</span>
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="k">import</span> <span class="n">Order</span>
+<span class="kn">from</span> <span class="nn">pochta.utils</span> <span class="k">import</span> <span class="n">HTTPMethod</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pochta</span> <span class="k">import</span> <span class="n">Delivery</span>
+
+
+<div class="viewcode-block" id="Batches"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches">[docs]</a><span class="k">class</span> <span class="nc">Batches</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Методы API Партий.</span>
+
+<span class="sd">    Используется через объект :class:`Delivery &lt;pochta.delivery.Delivery&gt;` или вручную.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Delivery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Инициализация API Партий.</span>
+
+<span class="sd">        :param client: API клиент Доставки</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
+
+<div class="viewcode-block" id="Batches.create_batch"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.create_batch">[docs]</a>    <span class="k">def</span> <span class="nf">create_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">sending_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">date</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Создание партии из N заказов.</span>
+
+<span class="sd">        Автоматически создает партию и переносит указанные подготовленные заказы в эту партию.</span>
+<span class="sd">        Если заказы относятся к разным типам и категориям – создается несколько партий.</span>
+<span class="sd">        Заказы распределяются по соответствующим партиям.</span>
+<span class="sd">        Каждому перенесенному заказу автоматически присваивается ШПИ.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-create_batch_from_N_orders</span>
+
+<span class="sd">        :param shipment_ids: Список внутренних идентификаторов заказов</span>
+<span class="sd">        :param sending_date: Дата сдачи в почтовое отделение (yyyy-MM-dd)</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/user/shipment&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sending_date</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="n">sending_date</span> <span class="o">=</span> <span class="n">sending_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sending-date&#39;</span><span class="p">:</span> <span class="n">sending_date</span><span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">shipment_ids</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.change_sending_date"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.change_sending_date">[docs]</a>    <span class="k">def</span> <span class="nf">change_sending_date</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">year</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">month</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">day</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Изменение дня отправки в почтовое отделение.</span>
+
+<span class="sd">        Изменяет (устанавливает) новый день отправки в почтовое отделение.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-sending_date</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :param year: Дата сдачи в почтовое отделение: год</span>
+<span class="sd">        :param month: Дата сдачи в почтовое отделение: месяц</span>
+<span class="sd">        :param day: Дата сдачи в почтовое отделение: день</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/batch/</span><span class="si">{batch_name}</span><span class="s1">/sending/</span><span class="si">{year}</span><span class="s1">/</span><span class="si">{month}</span><span class="s1">/</span><span class="si">{day}</span><span class="s1">&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.move_orders_to_batch"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.move_orders_to_batch">[docs]</a>    <span class="k">def</span> <span class="nf">move_orders_to_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">shipment_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Перенос заказов в партию.</span>
+
+<span class="sd">        Переносит подготовленные заказы в указанную партию.</span>
+<span class="sd">        Если часть заказов не может быть помещена в партию (тип и категория партии</span>
+<span class="sd">        не соответствует типу и категории заказа) - возвращается json объект с указанием индекса</span>
+<span class="sd">        заказа в переданном массиве и типом ошибки, остальные заказы помещаются в указанную партию.</span>
+<span class="sd">        Каждому перенесенному заказу автоматически присваивается ШПИ.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-move_orders_to_batch</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :param shipment_ids: Список внутренних идентификаторов заказов</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/batch/</span><span class="si">{batch_name}</span><span class="s1">/shipment&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">shipment_ids</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.find_batch"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.find_batch">[docs]</a>    <span class="k">def</span> <span class="nf">find_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск партии по наименованию.</span>
+
+<span class="sd">        Возвращает параметры партии.</span>
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-find_batch</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/batch/</span><span class="si">{batch_name}</span><span class="s1">&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.find_orders_with_barcode"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.find_orders_with_barcode">[docs]</a>    <span class="k">def</span> <span class="nf">find_orders_with_barcode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск заказов с ШПИ.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-find_orders_with_barcode</span>
+
+<span class="sd">        :param query: Условие для поиска: номер заказа или ШПИ</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/shipment/search&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.add_orders_to_batch"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.add_orders_to_batch">[docs]</a>    <span class="k">def</span> <span class="nf">add_orders_to_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">orders</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Order</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Добавление заказов в партию.</span>
+
+<span class="sd">        Создает массив заказов и помещает непосредственно в партию. Автоматически рассчитывает</span>
+<span class="sd">        и проставляет плату за пересылку. Каждому заказу автоматически присваивается ШПИ.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-add_orders_to_batch</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :param orders: Список заказов</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/batch/</span><span class="si">{batch_name}</span><span class="s1">/shipment&#39;</span>
+
+        <span class="n">orders</span> <span class="o">=</span> <span class="p">[</span><span class="n">order</span><span class="o">.</span><span class="n">raw</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">]</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">orders</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.delete_order_from_batch"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.delete_order_from_batch">[docs]</a>    <span class="k">def</span> <span class="nf">delete_order_from_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Удаление заказов из партии.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-delete_order_from_batch</span>
+
+<span class="sd">        :param shipment_ids: Список внутренних идентификаторов заказов</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/shipment&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">shipment_ids</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.get_batch_orders_info"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.get_batch_orders_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_batch_orders_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                              <span class="n">sort</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;asc&#39;</span><span class="p">,</span>
+                              <span class="n">size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                              <span class="n">page</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Запрос данных о заказах в партии.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-get_info_about_orders_in_batch</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :param sort: Критерии сортировки в формате: asc(по возрастанию) или desc (по убыванию).</span>
+<span class="sd">            По умолчанию порядок сортировки по возрастанию</span>
+<span class="sd">        :param size: Количество записей на странице</span>
+<span class="sd">        :param page: Номер страницы (0..N)</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/batch/</span><span class="si">{batch_name}</span><span class="s1">/shipment&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;sort&#39;</span><span class="p">:</span> <span class="n">sort</span><span class="p">,</span>
+            <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span>
+            <span class="s1">&#39;page&#39;</span><span class="p">:</span> <span class="n">page</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.search_all_batches"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.search_all_batches">[docs]</a>    <span class="k">def</span> <span class="nf">search_all_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mail_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MailType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">mail_category</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">MailCategory</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">sort</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;asc&#39;</span><span class="p">,</span>
+                           <span class="n">size</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">page</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск всех партий.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-search_all_batches</span>
+
+<span class="sd">        :param mail_type: Тип отправления (По умолчанию: ВСЕ)</span>
+<span class="sd">        :param mail_category: Категория отправления (По умолчанию: ВСЕ)</span>
+<span class="sd">        :param sort: Критерии сортировки в формате: asc(по возрастанию) или desc (по убыванию).</span>
+<span class="sd">            По умолчанию порядок сортировки по возрастанию</span>
+<span class="sd">        :param size: Количество записей на странице</span>
+<span class="sd">        :param page: Номер страницы (0..N)</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/batch&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;mailType&#39;</span><span class="p">:</span> <span class="n">mail_type</span><span class="p">,</span>
+            <span class="s1">&#39;mailCategory&#39;</span><span class="p">:</span> <span class="n">mail_category</span><span class="p">,</span>
+            <span class="s1">&#39;sort&#39;</span><span class="p">:</span> <span class="n">sort</span><span class="p">,</span>
+            <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span>
+            <span class="s1">&#39;page&#39;</span><span class="p">:</span> <span class="n">page</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Batches.find_order_by_id"><a class="viewcode-back" href="../../../pochta/api/batches.html#pochta.api.batches.Batches.find_order_by_id">[docs]</a>    <span class="k">def</span> <span class="nf">find_order_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск заказа в партии по внутреннему id.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/batches-find_order_by_id</span>
+
+<span class="sd">        :param shipment_id: Внутренний идентификатор отправления</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/shipment/</span><span class="si">{shipment_id}</span><span class="s1">&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

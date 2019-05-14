@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Данные &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Настройки" href="settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Настройки</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Данные</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pochta.api.nogroup">
+<span id="id1"></span><h1>Данные<a class="headerlink" href="#module-pochta.api.nogroup" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pochta.api.nogroup.NoGroup">
+<em class="property">class </em><code class="descclassname">pochta.api.nogroup.</code><code class="descname">NoGroup</code><span class="sig-paren">(</span><em>client</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/nogroup.html#NoGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.nogroup.NoGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Методы API Данных.</p>
+<p>Используется через объект <a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delivery</span></code></a> или вручную.</p>
+<p>Инициализация API Данных.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><em>Delivery</em></a>) – API клиент Доставки</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pochta.api.nogroup.NoGroup.address_normalization">
+<code class="descname">address_normalization</code><span class="sig-paren">(</span><em>addresses</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/nogroup.html#NoGroup.address_normalization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.nogroup.NoGroup.address_normalization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Нормализация адреса.</p>
+<p>Разделяет и помещает сущности переданных адресов (город, улица)
+в соответствующие поля возвращаемого объекта.
+Параметр id (идентификатор записи) используется для установления
+соответствия переданных и полученных записей, так как порядок
+сортировки возвращаемых записей не гарантируется.
+Метод автоматически ищет и возвращает индекс близлежащего
+ОПС по указанному адресу.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/nogroup-normalization_adress">https://otpravka.pochta.ru/specification#/nogroup-normalization_adress</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>addresses</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="../helpers.html#pochta.helpers.Address" title="pochta.helpers.Address"><code class="xref py py-class docutils literal notranslate"><span class="pre">Address</span></code></a>]) – Список адрессов</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат нормализации</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.nogroup.NoGroup.calc_delivery_rate">
+<code class="descname">calc_delivery_rate</code><span class="sig-paren">(</span><em>completeness_checking=None</em>, <em>courier=None</em>, <em>declared_value=None</em>, <em>height=None</em>, <em>length=None</em>, <em>width=None</em>, <em>entries_type=None</em>, <em>fragile=None</em>, <em>index_from=None</em>, <em>index_to=None</em>, <em>mail_category=&lt;MailCategory.SIMPLE: 'SIMPLE'&gt;</em>, <em>mail_direct=None</em>, <em>mail_type=&lt;MailType.POSTAL_PARCEL: 'POSTAL_PARCEL'&gt;</em>, <em>mass=100</em>, <em>notice_payment_method=None</em>, <em>payment_method=None</em>, <em>sms_notice_recipient=None</em>, <em>transport_type=None</em>, <em>with_order_of_notice=False</em>, <em>with_simple_notice=False</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/nogroup.html#NoGroup.calc_delivery_rate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.nogroup.NoGroup.calc_delivery_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Калькулятор стоимости доставки.</p>
+<p>Рассчитывает стоимость пересылки в зависимости от указанных
+входных данных. Индекс ОПС точки отправления берется из профиля
+клиента. Возвращаемые значения указываются в копейках.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/nogroup-rate_calculate">https://otpravka.pochta.ru/specification#/nogroup-rate_calculate</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>completeness_checking</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Признак услуги проверки комплектности</p></li>
+<li><p><strong>courier</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Отметка “Курьер”</p></li>
+<li><p><strong>declared_value</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Объявленная ценность</p></li>
+<li><p><strong>height</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Линейная высота (сантиметры)</p></li>
+<li><p><strong>length</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Линейная длина (сантиметры)</p></li>
+<li><p><strong>width</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Линейная ширина (сантиметры)</p></li>
+<li><p><strong>entries_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.EntryType" title="pochta.enums.EntryType"><code class="xref py py-class docutils literal notranslate"><span class="pre">EntryType</span></code></a>]) – Категория вложения.</p></li>
+<li><p><strong>fragile</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – Отметка “Осторожно/Хрупко”</p></li>
+<li><p><strong>index_from</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Почтовый индекс объекта почтовой связи места приема</p></li>
+<li><p><strong>index_to</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Почтовый индекс объекта почтовой связи места назначения</p></li>
+<li><p><strong>mail_category</strong> (<a class="reference internal" href="../enums.html#pochta.enums.MailCategory" title="pochta.enums.MailCategory"><code class="xref py py-class docutils literal notranslate"><span class="pre">MailCategory</span></code></a>) – Категория РПО</p></li>
+<li><p><strong>mail_direct</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Код страны назначения.</p></li>
+<li><p><strong>mail_type</strong> (<a class="reference internal" href="../enums.html#pochta.enums.MailType" title="pochta.enums.MailType"><code class="xref py py-class docutils literal notranslate"><span class="pre">MailType</span></code></a>) – Вид РПО</p></li>
+<li><p><strong>mass</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Масса отправления в граммах</p></li>
+<li><p><strong>notice_payment_method</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.PaymentType" title="pochta.enums.PaymentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PaymentType</span></code></a>]) – Способ оплаты уведомеления.</p></li>
+<li><p><strong>payment_method</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.PaymentType" title="pochta.enums.PaymentType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PaymentType</span></code></a>]) – Способ оплаты.</p></li>
+<li><p><strong>sms_notice_recipient</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Признак услуги SMS уведомления</p></li>
+<li><p><strong>transport_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.TransportType" title="pochta.enums.TransportType"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransportType</span></code></a>]) – Вид транспортировки</p></li>
+<li><p><strong>with_order_of_notice</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Отметка ‘С заказным уведомлением’</p></li>
+<li><p><strong>with_simple_notice</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Отметка ‘С простым уведомлением’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат расчета доставки</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.nogroup.NoGroup.check_reliability">
+<code class="descname">check_reliability</code><span class="sig-paren">(</span><em>recipients</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/nogroup.html#NoGroup.check_reliability"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.nogroup.NoGroup.check_reliability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Проверка благонадежности получателя.</p>
+<p>Актуально для отправлений с наложенным платежом.
+Определяет, является ли получатель благонадёжным, есть ли прецеденты невыкупа.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/nogroup-unreliable_recipient">https://otpravka.pochta.ru/specification#/nogroup-unreliable_recipient</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>recipients</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="../helpers.html#pochta.helpers.Recipient" title="pochta.helpers.Recipient"><code class="xref py py-class docutils literal notranslate"><span class="pre">Recipient</span></code></a>]) – Список получателей</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат проверки</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pochta.api.nogroup.NoGroup.counterpart_balance">
+<code class="descname">counterpart_balance</code><a class="headerlink" href="#pochta.api.nogroup.NoGroup.counterpart_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Отображение баланса.</p>
+<p>Отображает баланс расчетного счета. Возвращаемые значения указываются в копейках.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/nogroup-counterpart_balance">https://otpravka.pochta.ru/specification#/nogroup-counterpart_balance</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Информация о балансе контрагента</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.nogroup.NoGroup.fio_normalization">
+<code class="descname">fio_normalization</code><span class="sig-paren">(</span><em>names</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/nogroup.html#NoGroup.fio_normalization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.nogroup.NoGroup.fio_normalization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Нормализация ФИО.</p>
+<p>Очищает, разделяет и помещает значения ФИО в соответствующие
+поля возвращаемого объекта. Параметр id (идентификатор записи)
+используется для установления соответствия переданных и полученных
+записей, так как порядок сортировки возвращаемых
+записей не гарантируется.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/nogroup-normalization_fio">https://otpravka.pochta.ru/specification#/nogroup-normalization_fio</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>names</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="../helpers.html#pochta.helpers.Name" title="pochta.helpers.Name"><code class="xref py py-class docutils literal notranslate"><span class="pre">Name</span></code></a>]) – Список имен</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат нормализации</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.nogroup.NoGroup.phone_normalization">
+<code class="descname">phone_normalization</code><span class="sig-paren">(</span><em>phone_numbers</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/nogroup.html#NoGroup.phone_normalization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.nogroup.NoGroup.phone_normalization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Нормализация телефона.</p>
+<p>Принимает номера телефонов в неотформатированном виде, который может
+включать пробелы, символы: +-(). Очищает, разделяет и помещает сущности
+телефона (код города, номер) в соответствующие поля возвращаемого
+объекта. Если номер телефона 11-ти значный (мобильный),
+то дополнительные параметры, кроме original-phone и id,
+указывать не обязательно. Если номер телефона стационарный,
+то необходимо опционально указать дополнительные параметры для
+определения кода города. Параметр id (идентификатор записи)
+используется для установления соответствия переданных и полученных
+записей, так как порядок сортировки возвращаемых
+записей не гарантируется.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/nogroup-normalization_phone">https://otpravka.pochta.ru/specification#/nogroup-normalization_phone</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>phone_numbers</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<a class="reference internal" href="../helpers.html#pochta.helpers.Phone" title="pochta.helpers.Phone"><code class="xref py py-class docutils literal notranslate"><span class="pre">Phone</span></code></a>]) – Список номеров</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат нормализации</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="settings.html" class="btn btn-neutral float-left" title="Настройки" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.delivery &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.delivery</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.delivery</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">base64</span> <span class="k">import</span> <span class="n">b64encode</span>
+
+<span class="kn">from</span> <span class="nn">requests</span> <span class="k">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">Response</span><span class="p">,</span> <span class="n">Session</span>
+
+<span class="kn">from</span> <span class="nn">.api</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">LTA</span><span class="p">,</span>
+    <span class="n">Archive</span><span class="p">,</span>
+    <span class="n">Batches</span><span class="p">,</span>
+    <span class="n">Documents</span><span class="p">,</span>
+    <span class="n">NoGroup</span><span class="p">,</span>
+    <span class="n">Orders</span><span class="p">,</span>
+    <span class="n">Services</span><span class="p">,</span>
+    <span class="n">Settings</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">clean_data</span>
+
+
+<div class="viewcode-block" id="Delivery"><a class="viewcode-back" href="../../pochta/delivery.html#pochta.delivery.Delivery">[docs]</a><span class="k">class</span> <span class="nc">Delivery</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    API клиент сервиса Доставки.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">API_URL</span> <span class="o">=</span> <span class="s1">&#39;https://otpravka-api.pochta.ru&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">access_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Инициализация API клиента Доставки.</span>
+
+<span class="sd">        :param login: Логин от сервиса доставки</span>
+<span class="sd">        :param password: Пароль от сервиса доставки</span>
+<span class="sd">        :param access_token: Токен авторизации приложения</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_access_token</span> <span class="o">=</span> <span class="n">access_token</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_auth_key</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{login}</span><span class="s1">:</span><span class="si">{password}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_session</span> <span class="o">=</span> <span class="n">Session</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="n">f</span><span class="s1">&#39;AccessToken </span><span class="si">{self._access_token}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;X-User-Authorization&#39;</span><span class="p">:</span> <span class="n">f</span><span class="s1">&#39;Basic </span><span class="si">{self._auth_key}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json;charset=UTF-8&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_headers</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Функция для обращения к API методам через протокол HTTP.</span>
+
+<span class="sd">        :param method: HTTP метод</span>
+<span class="sd">        :param endpoint: Эндпоинт API</span>
+<span class="sd">        :param data: Тело запроса</span>
+<span class="sd">        :param kwargs: Дополнительные аргументы</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;</span><span class="si">{self.API_URL}{endpoint}</span><span class="s1">&#39;</span>
+        <span class="n">stream</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">req</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">prepared</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">prepare_request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">prepared</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">archive</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Archive</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Архив.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Archive</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">nogroup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NoGroup</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Данные.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">NoGroup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">lta</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LTA</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Долгосрочное хранение.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">LTA</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">services</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Services</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Поиск ОПС.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Services</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">settings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Settings</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Настройки.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Settings</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">documents</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Documents</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Документы.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Documents</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">batches</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batches</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Партии.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Batches</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">orders</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Orders</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Заказы.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Orders</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

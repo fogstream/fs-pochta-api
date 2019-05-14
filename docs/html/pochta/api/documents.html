@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Документы &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Архив" href="archive.html" />
+    <link rel="prev" title="Партии" href="batches.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batches.html">Партии</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Документы</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pochta.api.documents">
+<span id="id1"></span><h1>Документы<a class="headerlink" href="#module-pochta.api.documents" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pochta.api.documents.Documents">
+<em class="property">class </em><code class="descclassname">pochta.api.documents.</code><code class="descname">Documents</code><span class="sig-paren">(</span><em>client</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Методы API Документов.</p>
+<p>Используется через объект <a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delivery</span></code></a> или вручную.</p>
+<p>Инициализация API Документов.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><em>Delivery</em></a>) – API клиент Доставки</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pochta.api.documents.Documents.checkin">
+<code class="descname">checkin</code><span class="sig-paren">(</span><em>batch_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.checkin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.checkin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Подготовка и отправка электронной формы Ф103.</p>
+<p>Присваивает уникальную версию партии для дальнейшего приема этой партии сотрудниками ОПС.
+Отправляет по e-mail электронную форму Ф103 в ОПС для регистрации.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-checkin">https://otpravka.pochta.ru/specification#/documents-checkin</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат операции</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.documents.Documents.create_all_docs">
+<code class="descname">create_all_docs</code><span class="sig-paren">(</span><em>batch_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.create_all_docs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.create_all_docs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Генерация пакета документации.</p>
+<dl class="simple">
+<dt>Генерирует и возвращает zip архив с 4-мя файлами:</dt><dd><ul class="simple">
+<li><p>Export.xls , Export.csv - список с основными данными по заявкам в составе партии</p></li>
+<li><p>F103.pdf - форма ф103 по заявкам в составе партии</p></li>
+<li><p>В зависимости от типа и категории отправлений, формируется комбинация из
+сопроводительных документов в формате pdf ( формы: f7, f112, f22)</p></li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-create_all_docs">https://otpravka.pochta.ru/specification#/documents-create_all_docs</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ответ API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.documents.Documents.create_comp_check_form">
+<code class="descname">create_comp_check_form</code><span class="sig-paren">(</span><em>batch_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.create_comp_check_form"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.create_comp_check_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Генерация печатной формы акта осмотра содержимого.</p>
+<p>Генерирует и возвращает pdf файл с формой акта осмотра содержимого для указанной партии.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-create_comp_check_form">https://otpravka.pochta.ru/specification#/documents-create_comp_check_form</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ответ API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.documents.Documents.create_f103">
+<code class="descname">create_f103</code><span class="sig-paren">(</span><em>batch_name</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.create_f103"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.create_f103" title="Permalink to this definition">¶</a></dt>
+<dd><p>Генерация печатной формы Ф103.</p>
+<p>Генерирует и возвращает pdf файл с формой Ф103 для указанной партии.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-create_f103">https://otpravka.pochta.ru/specification#/documents-create_f103</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_name</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Наименование партии</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ответ API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.documents.Documents.create_f112">
+<code class="descname">create_f112</code><span class="sig-paren">(</span><em>shipment_id</em>, <em>sending_date=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.create_f112"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.create_f112" title="Permalink to this definition">¶</a></dt>
+<dd><p>Генерация печатной формы Ф112ЭК.</p>
+<p>Генерирует и возвращает pdf-файл с заполненной формой Ф112ЭК для указанного заказа.
+Только для заказа с «наложенным платежом». Если заказ не имеет данного атрибута,
+метод вернет ошибку. Если параметр sending-date не передается, берется текущая дата.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-create_f112">https://otpravka.pochta.ru/specification#/documents-create_f112</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shipment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Уникальный идентификатор заказа</p></li>
+<li><p><strong>sending_date</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>]) – Дата отправки в почтовое отделение (yyyy-MM-dd)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ответ API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.documents.Documents.create_f7_f22">
+<code class="descname">create_f7_f22</code><span class="sig-paren">(</span><em>shipment_id</em>, <em>sending_date=None</em>, <em>print_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.create_f7_f22"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.create_f7_f22" title="Permalink to this definition">¶</a></dt>
+<dd><p>Генерация печатной формы Ф7п.</p>
+<p>Генерирует и возвращает pdf файл с формой ф7п для указанного заказа.
+Опционально в файл прикрепляется форма Ф22 (посылка онлайн).
+Если параметр sending-date не передается, берется текущая дата.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-create_f7_f22">https://otpravka.pochta.ru/specification#/documents-create_f7_f22</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shipment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Уникальный идентификатор заказа</p></li>
+<li><p><strong>sending_date</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>]) – Дата отправки в почтовое отделение (yyyy-MM-dd)</p></li>
+<li><p><strong>print_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.PrintType" title="pochta.enums.PrintType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrintType</span></code></a>]) – Тип печати</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ответ API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.documents.Documents.create_forms">
+<code class="descname">create_forms</code><span class="sig-paren">(</span><em>shipment_id</em>, <em>sending_date=None</em>, <em>print_type=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.create_forms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.create_forms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Генерация печатных форм для заказа.</p>
+<dl class="simple">
+<dt>Генерирует и возвращает pdf файл, который содержит, либо:</dt><dd><ul class="simple">
+<li><p>форму ф7п (посылка, посылка-онлайн, бандероль, курьер-онлайн)</p></li>
+<li><p>форму Е-1 (EMS, EMS-оптимальное, Бизнес курьер, Бизнес курьер экспресс)</p></li>
+<li><p>конверт (письмо заказное)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Опционально прикрепляются формы: Ф112ЭК (отправление с наложенным платежом),
+Ф22 (посылка онлайн), уведомление и опись вложения (для заказного письма или бандероли).</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-create_forms">https://otpravka.pochta.ru/specification#/documents-create_forms</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shipment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Уникальный идентификатор заказа</p></li>
+<li><p><strong>sending_date</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>]) – Дата отправки в почтовое отделение (yyyy-MM-dd)</p></li>
+<li><p><strong>print_type</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../enums.html#pochta.enums.PrintType" title="pochta.enums.PrintType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PrintType</span></code></a>]) – Тип печати</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ответ API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.documents.Documents.create_forms_backlog">
+<code class="descname">create_forms_backlog</code><span class="sig-paren">(</span><em>shipment_id</em>, <em>sending_date=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/documents.html#Documents.create_forms_backlog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.documents.Documents.create_forms_backlog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Генерация печатных форм для заказа (до формирования партии).</p>
+<dl class="simple">
+<dt>Генерирует и возвращает pdf файл, который может содержать в зависимости от типа отправления:</dt><dd><ul class="simple">
+<li><p>форму ф7п (посылка, посылка-онлайн, бандероль, курьер-онлайн)</p></li>
+<li><p>форму Е-1 (EMS, EMS-оптимальное, Бизнес курьер, Бизнес курьер экспресс)</p></li>
+<li><p>конверт (письмо заказное)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Опционально прикрепляются формы: Ф112ЭК (отправление с наложенным платежом),
+Ф22 (посылка онлайн), уведомление (для заказного письма или бандероли).</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/documents-create_forms_backlog">https://otpravka.pochta.ru/specification#/documents-create_forms_backlog</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shipment_id</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Уникальный идентификатор заказа</p></li>
+<li><p><strong>sending_date</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code>]) – Дата отправки в почтовое отделение (yyyy-MM-dd)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Response</span></code></p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Ответ API</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="archive.html" class="btn btn-neutral float-right" title="Архив" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="batches.html" class="btn btn-neutral float-left" title="Партии" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

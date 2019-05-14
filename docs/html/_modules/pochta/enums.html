@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.enums &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.enums</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.enums</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">enum</span> <span class="k">import</span> <span class="n">auto</span>
+
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">_AutoName</span>
+
+
+<div class="viewcode-block" id="EntryType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.EntryType">[docs]</a><span class="k">class</span> <span class="nc">EntryType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Категория вложения.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-entries-type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">GIFT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">DOCUMENT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">SALE_OF_GOODS</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">COMMERCIAL_SAMPLE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">OTHER</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MailCategory"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.MailCategory">[docs]</a><span class="k">class</span> <span class="nc">MailCategory</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Категория РПО.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-mail-category</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">SIMPLE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ORDERED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ORDINARY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">WITH_DECLARED_VALUE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">WITH_DECLARED_VALUE_AND_CASH_ON_DELIVERY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">COMBINED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MailType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.MailType">[docs]</a><span class="k">class</span> <span class="nc">MailType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Вид РПО.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-mail-type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">POSTAL_PARCEL</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ONLINE_PARCEL</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ONLINE_COURIER</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">EMS</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">EMS_OPTIMAL</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">EMS_RT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">LETTER</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">LETTER_CLASS_1</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">BANDEROL</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">BUSINESS_COURIER</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">BUSINESS_COURIER_ES</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">PARCEL_CLASS_1</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">BANDEROL_CLASS_1</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">VGPO_CLASS_1</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">SMALL_PACKET</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">COMBINED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="PaymentType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.PaymentType">[docs]</a><span class="k">class</span> <span class="nc">PaymentType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Способы оплаты.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-payment-methods</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">CASHLESS</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">STAMP</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">FRANKING</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">TO_FRANKING</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ONLINE_PAYMENT_MARK</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="TransportType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.TransportType">[docs]</a><span class="k">class</span> <span class="nc">TransportType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Вид транспортировки.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-transport-type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">SURFACE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">AVIA</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">COMBINED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">EXPRESS</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="PrintType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.PrintType">[docs]</a><span class="k">class</span> <span class="nc">PrintType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Тип печати (формат адресного ярлыка).</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-print-type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">PAPER</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">THERMO</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="PostofficeWorkType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.PostofficeWorkType">[docs]</a><span class="k">class</span> <span class="nc">PostofficeWorkType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Ограничение по времени работы для поиска ОПС.&quot;&quot;&quot;</span>
+
+    <span class="n">ALL</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ROUND_THE_CLOCK</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">CURRENTLY_WORKING</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">WORK_ON_WEEKENDS</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="AddressType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.AddressType">[docs]</a><span class="k">class</span> <span class="nc">AddressType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Тип адреса.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-address-type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">DEFAULT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">PO_BOX</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">DEMAND</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">UNIT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="BatchCategory"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.BatchCategory">[docs]</a><span class="k">class</span> <span class="nc">BatchCategory</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Категория партии.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-batch-category</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">SIMPLE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ORDERED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">ORDINARY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">WITH_DECLARED_VALUE</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">WITH_DECLARED_VALUE_AND_CASH_ON_DELIVERY</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">WITH_DECLARED_VALUE_AND_COMPULSORY_PAYMENT</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">COMBINED</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="EnvelopeType"><a class="viewcode-back" href="../../pochta/enums.html#pochta.enums.EnvelopeType">[docs]</a><span class="k">class</span> <span class="nc">EnvelopeType</span><span class="p">(</span><span class="n">_AutoName</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Тип конверта.</span>
+
+<span class="sd">    https://otpravka.pochta.ru/specification#/enums-base-envelope-type</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">C4</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">C5</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">DL</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">A6</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span>
+    <span class="n">A7</span> <span class="o">=</span> <span class="n">auto</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

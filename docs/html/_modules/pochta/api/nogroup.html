@@ -1,0 +1,434 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.api.nogroup &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.api.nogroup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.api.nogroup</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">pochta.enums</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">EntryType</span><span class="p">,</span>
+    <span class="n">MailCategory</span><span class="p">,</span>
+    <span class="n">MailType</span><span class="p">,</span>
+    <span class="n">PaymentType</span><span class="p">,</span>
+    <span class="n">TransportType</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="k">import</span> <span class="n">Address</span><span class="p">,</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Phone</span><span class="p">,</span> <span class="n">Recipient</span>
+<span class="kn">from</span> <span class="nn">pochta.utils</span> <span class="k">import</span> <span class="n">HTTPMethod</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pochta</span> <span class="k">import</span> <span class="n">Delivery</span>
+
+
+<div class="viewcode-block" id="NoGroup"><a class="viewcode-back" href="../../../pochta/api/nogroup.html#pochta.api.nogroup.NoGroup">[docs]</a><span class="k">class</span> <span class="nc">NoGroup</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Методы API Данных.</span>
+
+<span class="sd">    Используется через объект :class:`Delivery &lt;pochta.delivery.Delivery&gt;` или вручную.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Delivery</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Инициализация API Данных.</span>
+
+<span class="sd">        :param client: API клиент Доставки</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
+
+<div class="viewcode-block" id="NoGroup.address_normalization"><a class="viewcode-back" href="../../../pochta/api/nogroup.html#pochta.api.nogroup.NoGroup.address_normalization">[docs]</a>    <span class="k">def</span> <span class="nf">address_normalization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">addresses</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Address</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Нормализация адреса.</span>
+
+<span class="sd">        Разделяет и помещает сущности переданных адресов (город, улица)</span>
+<span class="sd">        в соответствующие поля возвращаемого объекта.</span>
+<span class="sd">        Параметр id (идентификатор записи) используется для установления</span>
+<span class="sd">        соответствия переданных и полученных записей, так как порядок</span>
+<span class="sd">        сортировки возвращаемых записей не гарантируется.</span>
+<span class="sd">        Метод автоматически ищет и возвращает индекс близлежащего</span>
+<span class="sd">        ОПС по указанному адресу.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/nogroup-normalization_adress</span>
+
+<span class="sd">        :param addresses:  Список адрессов</span>
+<span class="sd">        :return: Результат нормализации</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/clean/address&#39;</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">address</span><span class="o">.</span><span class="n">raw</span> <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">addresses</span><span class="p">]</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="NoGroup.fio_normalization"><a class="viewcode-back" href="../../../pochta/api/nogroup.html#pochta.api.nogroup.NoGroup.fio_normalization">[docs]</a>    <span class="k">def</span> <span class="nf">fio_normalization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Name</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Нормализация ФИО.</span>
+
+<span class="sd">        Очищает, разделяет и помещает значения ФИО в соответствующие</span>
+<span class="sd">        поля возвращаемого объекта. Параметр id (идентификатор записи)</span>
+<span class="sd">        используется для установления соответствия переданных и полученных</span>
+<span class="sd">        записей, так как порядок сортировки возвращаемых</span>
+<span class="sd">        записей не гарантируется.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/nogroup-normalization_fio</span>
+
+<span class="sd">        :param names: Список имен</span>
+<span class="sd">        :return: Результат нормализации</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/clean/physical&#39;</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="o">.</span><span class="n">raw</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="NoGroup.phone_normalization"><a class="viewcode-back" href="../../../pochta/api/nogroup.html#pochta.api.nogroup.NoGroup.phone_normalization">[docs]</a>    <span class="k">def</span> <span class="nf">phone_normalization</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phone_numbers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Phone</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Нормализация телефона.</span>
+
+<span class="sd">        Принимает номера телефонов в неотформатированном виде, который может</span>
+<span class="sd">        включать пробелы, символы: +-(). Очищает, разделяет и помещает сущности</span>
+<span class="sd">        телефона (код города, номер) в соответствующие поля возвращаемого</span>
+<span class="sd">        объекта. Если номер телефона 11-ти значный (мобильный),</span>
+<span class="sd">        то дополнительные параметры, кроме original-phone и id,</span>
+<span class="sd">        указывать не обязательно. Если номер телефона стационарный,</span>
+<span class="sd">        то необходимо опционально указать дополнительные параметры для</span>
+<span class="sd">        определения кода города. Параметр id (идентификатор записи)</span>
+<span class="sd">        используется для установления соответствия переданных и полученных</span>
+<span class="sd">        записей, так как порядок сортировки возвращаемых</span>
+<span class="sd">        записей не гарантируется.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/nogroup-normalization_phone</span>
+
+<span class="sd">        :param phone_numbers: Список номеров</span>
+<span class="sd">        :return: Результат нормализации</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/clean/phone&#39;</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">phone</span><span class="o">.</span><span class="n">raw</span> <span class="k">for</span> <span class="n">phone</span> <span class="ow">in</span> <span class="n">phone_numbers</span><span class="p">]</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="NoGroup.check_reliability"><a class="viewcode-back" href="../../../pochta/api/nogroup.html#pochta.api.nogroup.NoGroup.check_reliability">[docs]</a>    <span class="k">def</span> <span class="nf">check_reliability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">recipients</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Recipient</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Проверка благонадежности получателя.</span>
+
+<span class="sd">        Актуально для отправлений с наложенным платежом.</span>
+<span class="sd">        Определяет, является ли получатель благонадёжным, есть ли прецеденты невыкупа.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/nogroup-unreliable_recipient</span>
+
+<span class="sd">        :param recipients: Список получателей</span>
+<span class="sd">        :return: Результат проверки</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/unreliable-recipient&#39;</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">recipient</span><span class="o">.</span><span class="n">raw</span> <span class="k">for</span> <span class="n">recipient</span> <span class="ow">in</span> <span class="n">recipients</span><span class="p">]</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">counterpart_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Отображение баланса.</span>
+
+<span class="sd">        Отображает баланс расчетного счета. Возвращаемые значения указываются в копейках.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/nogroup-counterpart_balance</span>
+
+<span class="sd">        :return: Информация о балансе контрагента</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/counterpart/balance&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<div class="viewcode-block" id="NoGroup.calc_delivery_rate"><a class="viewcode-back" href="../../../pochta/api/nogroup.html#pochta.api.nogroup.NoGroup.calc_delivery_rate">[docs]</a>    <span class="k">def</span> <span class="nf">calc_delivery_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">completeness_checking</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">courier</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">declared_value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">height</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">width</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">entries_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">EntryType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">fragile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">index_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">index_to</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">mail_category</span><span class="p">:</span> <span class="n">MailCategory</span> <span class="o">=</span> <span class="n">MailCategory</span><span class="o">.</span><span class="n">SIMPLE</span><span class="p">,</span>
+                           <span class="n">mail_direct</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">mail_type</span><span class="p">:</span> <span class="n">MailType</span> <span class="o">=</span> <span class="n">MailType</span><span class="o">.</span><span class="n">POSTAL_PARCEL</span><span class="p">,</span>
+                           <span class="n">mass</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+                           <span class="n">notice_payment_method</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PaymentType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">payment_method</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PaymentType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">sms_notice_recipient</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">transport_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">TransportType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">with_order_of_notice</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                           <span class="n">with_simple_notice</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Калькулятор стоимости доставки.</span>
+
+<span class="sd">        Рассчитывает стоимость пересылки в зависимости от указанных</span>
+<span class="sd">        входных данных. Индекс ОПС точки отправления берется из профиля</span>
+<span class="sd">        клиента. Возвращаемые значения указываются в копейках.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/nogroup-rate_calculate</span>
+
+<span class="sd">        :param completeness_checking: Признак услуги проверки комплектности</span>
+<span class="sd">        :param courier: Отметка &quot;Курьер&quot;</span>
+<span class="sd">        :param declared_value: Объявленная ценность</span>
+<span class="sd">        :param height: Линейная высота (сантиметры)</span>
+<span class="sd">        :param length: Линейная длина (сантиметры)</span>
+<span class="sd">        :param width: Линейная ширина (сантиметры)</span>
+<span class="sd">        :param entries_type: Категория вложения.</span>
+<span class="sd">        :param fragile: Отметка &quot;Осторожно/Хрупко&quot;</span>
+<span class="sd">        :param index_from: Почтовый индекс объекта почтовой связи места приема</span>
+<span class="sd">        :param index_to: Почтовый индекс объекта почтовой связи места назначения</span>
+<span class="sd">        :param mail_category: Категория РПО</span>
+<span class="sd">        :param mail_direct: Код страны назначения.</span>
+<span class="sd">        :param mail_type: Вид РПО</span>
+<span class="sd">        :param mass: Масса отправления в граммах</span>
+<span class="sd">        :param notice_payment_method: Способ оплаты уведомеления.</span>
+<span class="sd">        :param payment_method: Способ оплаты.</span>
+<span class="sd">        :param sms_notice_recipient: Признак услуги SMS уведомления</span>
+<span class="sd">        :param transport_type: Вид транспортировки</span>
+<span class="sd">        :param with_order_of_notice: Отметка &#39;С заказным уведомлением&#39;</span>
+<span class="sd">        :param with_simple_notice: Отметка &#39;С простым уведомлением&#39;</span>
+<span class="sd">        :return: Результат расчета доставки</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/tariff&#39;</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;completeness-checking&#39;</span><span class="p">:</span> <span class="n">completeness_checking</span><span class="p">,</span>
+            <span class="s1">&#39;courier&#39;</span><span class="p">:</span> <span class="n">courier</span><span class="p">,</span>
+            <span class="s1">&#39;declared-value&#39;</span><span class="p">:</span> <span class="n">declared_value</span><span class="p">,</span>
+            <span class="s1">&#39;dimension&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">height</span><span class="p">,</span>
+                <span class="s1">&#39;length&#39;</span><span class="p">:</span> <span class="n">length</span><span class="p">,</span>
+                <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="n">width</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;entries-type&#39;</span><span class="p">:</span> <span class="n">entries_type</span><span class="p">,</span>
+            <span class="s1">&#39;fragile&#39;</span><span class="p">:</span> <span class="n">fragile</span><span class="p">,</span>
+            <span class="s1">&#39;index-from&#39;</span><span class="p">:</span> <span class="n">index_from</span><span class="p">,</span>
+            <span class="s1">&#39;index-to&#39;</span><span class="p">:</span> <span class="n">index_to</span><span class="p">,</span>
+            <span class="s1">&#39;mail-category&#39;</span><span class="p">:</span> <span class="n">mail_category</span><span class="p">,</span>
+            <span class="s1">&#39;mail-direct&#39;</span><span class="p">:</span> <span class="n">mail_direct</span><span class="p">,</span>
+            <span class="s1">&#39;mail-type&#39;</span><span class="p">:</span> <span class="n">mail_type</span><span class="p">,</span>
+            <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">mass</span><span class="p">,</span>
+            <span class="s1">&#39;notice-payment-method&#39;</span><span class="p">:</span> <span class="n">notice_payment_method</span><span class="p">,</span>
+            <span class="s1">&#39;payment-method&#39;</span><span class="p">:</span> <span class="n">payment_method</span><span class="p">,</span>
+            <span class="s1">&#39;sms-notice-recipient&#39;</span><span class="p">:</span> <span class="n">sms_notice_recipient</span><span class="p">,</span>
+            <span class="s1">&#39;transport-type&#39;</span><span class="p">:</span> <span class="n">transport_type</span><span class="p">,</span>
+            <span class="s1">&#39;with-order-of-notice&#39;</span><span class="p">:</span> <span class="n">with_order_of_notice</span><span class="p">,</span>
+            <span class="s1">&#39;with-simple-notice&#39;</span><span class="p">:</span> <span class="n">with_simple_notice</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

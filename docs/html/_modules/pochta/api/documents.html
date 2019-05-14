@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.api.documents &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.api.documents</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.api.documents</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span> <span class="nn">requests</span> <span class="k">import</span> <span class="n">Response</span>
+
+<span class="kn">from</span> <span class="nn">pochta.enums</span> <span class="k">import</span> <span class="n">PrintType</span>
+<span class="kn">from</span> <span class="nn">pochta.utils</span> <span class="k">import</span> <span class="n">HTTPMethod</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pochta</span> <span class="k">import</span> <span class="n">Delivery</span>
+
+
+<div class="viewcode-block" id="Documents"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents">[docs]</a><span class="k">class</span> <span class="nc">Documents</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Методы API Документов.</span>
+
+<span class="sd">    Используется через объект :class:`Delivery &lt;pochta.delivery.Delivery&gt;` или вручную.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Delivery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Инициализация API Документов.</span>
+
+<span class="sd">        :param client: API клиент Доставки</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
+
+<div class="viewcode-block" id="Documents.create_all_docs"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.create_all_docs">[docs]</a>    <span class="k">def</span> <span class="nf">create_all_docs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Генерация пакета документации.</span>
+
+<span class="sd">        Генерирует и возвращает zip архив с 4-мя файлами:</span>
+<span class="sd">            - Export.xls , Export.csv - список с основными данными по заявкам в составе партии</span>
+<span class="sd">            - F103.pdf - форма ф103 по заявкам в составе партии</span>
+<span class="sd">            - В зависимости от типа и категории отправлений, формируется комбинация из</span>
+<span class="sd">              сопроводительных документов в формате pdf ( формы: f7, f112, f22)</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-create_all_docs</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/forms/</span><span class="si">{batch_name}</span><span class="s1">/zip-all&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="Documents.create_f7_f22"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.create_f7_f22">[docs]</a>    <span class="k">def</span> <span class="nf">create_f7_f22</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sending_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">date</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">print_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PrintType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Генерация печатной формы Ф7п.</span>
+
+<span class="sd">        Генерирует и возвращает pdf файл с формой ф7п для указанного заказа.</span>
+<span class="sd">        Опционально в файл прикрепляется форма Ф22 (посылка онлайн).</span>
+<span class="sd">        Если параметр sending-date не передается, берется текущая дата.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-create_f7_f22</span>
+
+<span class="sd">        :param shipment_id: Уникальный идентификатор заказа</span>
+<span class="sd">        :param sending_date: Дата отправки в почтовое отделение (yyyy-MM-dd)</span>
+<span class="sd">        :param print_type: Тип печати</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/forms/</span><span class="si">{shipment_id}</span><span class="s1">/f7pdf&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sending_date</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="n">sending_date</span> <span class="o">=</span> <span class="n">sending_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;sending-date&#39;</span><span class="p">:</span> <span class="n">sending_date</span><span class="p">,</span>
+            <span class="s1">&#39;print-type&#39;</span><span class="p">:</span> <span class="n">print_type</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="Documents.create_f112"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.create_f112">[docs]</a>    <span class="k">def</span> <span class="nf">create_f112</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sending_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">date</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Генерация печатной формы Ф112ЭК.</span>
+
+<span class="sd">        Генерирует и возвращает pdf-файл с заполненной формой Ф112ЭК для указанного заказа.</span>
+<span class="sd">        Только для заказа с «наложенным платежом». Если заказ не имеет данного атрибута,</span>
+<span class="sd">        метод вернет ошибку. Если параметр sending-date не передается, берется текущая дата.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-create_f112</span>
+
+<span class="sd">        :param shipment_id: Уникальный идентификатор заказа</span>
+<span class="sd">        :param sending_date: Дата отправки в почтовое отделение (yyyy-MM-dd)</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/forms/</span><span class="si">{shipment_id}</span><span class="s1">/f112pdf&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sending_date</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="n">sending_date</span> <span class="o">=</span> <span class="n">sending_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sending-date&#39;</span><span class="p">:</span> <span class="n">sending_date</span><span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="Documents.create_forms_backlog"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.create_forms_backlog">[docs]</a>    <span class="k">def</span> <span class="nf">create_forms_backlog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                             <span class="n">sending_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">date</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Генерация печатных форм для заказа (до формирования партии).</span>
+
+<span class="sd">        Генерирует и возвращает pdf файл, который может содержать в зависимости от типа отправления:</span>
+<span class="sd">            - форму ф7п (посылка, посылка-онлайн, бандероль, курьер-онлайн)</span>
+<span class="sd">            - форму Е-1 (EMS, EMS-оптимальное, Бизнес курьер, Бизнес курьер экспресс)</span>
+<span class="sd">            - конверт (письмо заказное)</span>
+
+<span class="sd">        Опционально прикрепляются формы: Ф112ЭК (отправление с наложенным платежом),</span>
+<span class="sd">        Ф22 (посылка онлайн), уведомление (для заказного письма или бандероли).</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-create_forms_backlog</span>
+
+<span class="sd">        :param shipment_id: Уникальный идентификатор заказа</span>
+<span class="sd">        :param sending_date: Дата отправки в почтовое отделение (yyyy-MM-dd)</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/forms/backlog/</span><span class="si">{shipment_id}</span><span class="s1">/forms&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sending_date</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="n">sending_date</span> <span class="o">=</span> <span class="n">sending_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;sending-date&#39;</span><span class="p">:</span> <span class="n">sending_date</span><span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="Documents.create_forms"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.create_forms">[docs]</a>    <span class="k">def</span> <span class="nf">create_forms</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sending_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">date</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">print_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PrintType</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Генерация печатных форм для заказа.</span>
+
+<span class="sd">        Генерирует и возвращает pdf файл, который содержит, либо:</span>
+<span class="sd">            - форму ф7п (посылка, посылка-онлайн, бандероль, курьер-онлайн)</span>
+<span class="sd">            - форму Е-1 (EMS, EMS-оптимальное, Бизнес курьер, Бизнес курьер экспресс)</span>
+<span class="sd">            - конверт (письмо заказное)</span>
+
+<span class="sd">        Опционально прикрепляются формы: Ф112ЭК (отправление с наложенным платежом),</span>
+<span class="sd">        Ф22 (посылка онлайн), уведомление и опись вложения (для заказного письма или бандероли).</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-create_forms</span>
+
+<span class="sd">        :param shipment_id: Уникальный идентификатор заказа</span>
+<span class="sd">        :param sending_date: Дата отправки в почтовое отделение (yyyy-MM-dd)</span>
+<span class="sd">        :param print_type: Тип печати</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/forms/</span><span class="si">{shipment_id}</span><span class="s1">/forms&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sending_date</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+            <span class="n">sending_date</span> <span class="o">=</span> <span class="n">sending_date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;sending-date&#39;</span><span class="p">:</span> <span class="n">sending_date</span><span class="p">,</span>
+            <span class="s1">&#39;print-type&#39;</span><span class="p">:</span> <span class="n">print_type</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="Documents.create_f103"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.create_f103">[docs]</a>    <span class="k">def</span> <span class="nf">create_f103</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Генерация печатной формы Ф103.</span>
+
+<span class="sd">        Генерирует и возвращает pdf файл с формой Ф103 для указанной партии.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-create_f103</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/forms/</span><span class="si">{batch_name}</span><span class="s1">/f103pdf&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div>
+
+<div class="viewcode-block" id="Documents.checkin"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.checkin">[docs]</a>    <span class="k">def</span> <span class="nf">checkin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Подготовка и отправка электронной формы Ф103.</span>
+
+<span class="sd">        Присваивает уникальную версию партии для дальнейшего приема этой партии сотрудниками ОПС.</span>
+<span class="sd">        Отправляет по e-mail электронную форму Ф103 в ОПС для регистрации.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-checkin</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/batch/</span><span class="si">{batch_name}</span><span class="s1">/checkin&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Documents.create_comp_check_form"><a class="viewcode-back" href="../../../pochta/api/documents.html#pochta.api.documents.Documents.create_comp_check_form">[docs]</a>    <span class="k">def</span> <span class="nf">create_comp_check_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Генерация печатной формы акта осмотра содержимого.</span>
+
+<span class="sd">        Генерирует и возвращает pdf файл с формой акта осмотра содержимого для указанной партии.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/documents-create_comp_check_form</span>
+
+<span class="sd">        :param batch_name: Наименование партии</span>
+<span class="sd">        :return: Ответ API</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/forms/</span><span class="si">{batch_name}</span><span class="s1">/completeness-checking-form&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

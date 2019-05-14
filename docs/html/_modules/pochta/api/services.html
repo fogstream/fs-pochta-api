@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.api.services &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.api.services</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.api.services</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+
+<span class="kn">from</span> <span class="nn">pochta.enums</span> <span class="k">import</span> <span class="n">PostofficeWorkType</span>
+<span class="kn">from</span> <span class="nn">pochta.utils</span> <span class="k">import</span> <span class="n">HTTPMethod</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pochta</span> <span class="k">import</span> <span class="n">Delivery</span>
+
+
+<div class="viewcode-block" id="Services"><a class="viewcode-back" href="../../../pochta/api/services.html#pochta.api.services.Services">[docs]</a><span class="k">class</span> <span class="nc">Services</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Методы API Поиска ОПС.</span>
+
+<span class="sd">    Используется через объект :class:`Delivery &lt;pochta.delivery.Delivery&gt;` или вручную.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Delivery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Инициализация API Поиска ОПС.</span>
+
+<span class="sd">        :param client: API клиент Доставки</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
+
+<div class="viewcode-block" id="Services.get_postoffice"><a class="viewcode-back" href="../../../pochta/api/services.html#pochta.api.services.Services.get_postoffice">[docs]</a>    <span class="k">def</span> <span class="nf">get_postoffice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postal_code</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск почтового отделения по индексу.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/services-postoffice</span>
+
+<span class="sd">        :param postal_code: Индекс почтового отделения</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/postoffice/1.0/</span><span class="si">{postal_code}</span><span class="s1">&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ufps-postal-code&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Services.get_postoffice_by_address"><a class="viewcode-back" href="../../../pochta/api/services.html#pochta.api.services.Services.get_postoffice_by_address">[docs]</a>    <span class="k">def</span> <span class="nf">get_postoffice_by_address</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">top</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск обслуживающего ОПС по адресу.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/services-postoffice-by-address</span>
+
+<span class="sd">        :param address: Строка с адресом. Следует учесть, что чем точнее адрес,</span>
+<span class="sd">            тем точнее будет поиск. Пример: Санкт-Петербург, улица Победы, 15к1</span>
+<span class="sd">        :param top: Количество ближайших почтовых отделений в результате поиска (Опционально).</span>
+<span class="sd">            По умолчанию равно 3.</span>
+<span class="sd">        :return: Список почтовых индексов найденных ОПС отсортированный по релевантности</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/postoffice/1.0/by-address&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="n">address</span><span class="p">,</span>
+            <span class="s1">&#39;top&#39;</span><span class="p">:</span> <span class="n">top</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Services.get_postoffice_services"><a class="viewcode-back" href="../../../pochta/api/services.html#pochta.api.services.Services.get_postoffice_services">[docs]</a>    <span class="k">def</span> <span class="nf">get_postoffice_services</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postal_code</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск почтовых сервисов ОПС.</span>
+
+<span class="sd">        Может возвращать как все доступные сервисы,</span>
+<span class="sd">        так и сервисы определенной группы (например: Киберпочт@).</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/services-postoffice-service</span>
+
+<span class="sd">        :param postal_code: Индекс почтового отделения.</span>
+<span class="sd">        :return: Почтовые сервисы в ОПС</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/postoffice/1.0/</span><span class="si">{postal_code}</span><span class="s1">/services&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Services.get_postoffice_service_group"><a class="viewcode-back" href="../../../pochta/api/services.html#pochta.api.services.Services.get_postoffice_service_group">[docs]</a>    <span class="k">def</span> <span class="nf">get_postoffice_service_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postal_code</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+                                     <span class="n">group_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск почтовых сервисов ОПС по идентификатору группы сервисов.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/services-postoffice-service-group</span>
+
+<span class="sd">        :param postal_code: Индекс почтового отделения.</span>
+<span class="sd">        :param group_id: Идентификатор группы сервисов.</span>
+<span class="sd">        :return: Почтовые сервисы в ОПС</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/postoffice/1.0/</span><span class="si">{postal_code}</span><span class="s1">/services/</span><span class="si">{group_id}</span><span class="s1">&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Services.get_nearby_postoffices"><a class="viewcode-back" href="../../../pochta/api/services.html#pochta.api.services.Services.get_nearby_postoffices">[docs]</a>    <span class="k">def</span> <span class="nf">get_nearby_postoffices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lan</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">lon</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                               <span class="n">top</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                               <span class="n">work_filter</span><span class="p">:</span> <span class="n">PostofficeWorkType</span> <span class="o">=</span> <span class="n">PostofficeWorkType</span><span class="o">.</span><span class="n">ALL</span><span class="p">,</span>
+                               <span class="n">search_radius</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                               <span class="n">current_date_time</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                               <span class="n">hide_private</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                               <span class="n">filter_by_office_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                               <span class="n">yandex_address</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                               <span class="n">geo_object</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск почтовых отделений по координатам.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/services-postoffice-nearby</span>
+
+<span class="sd">        :param lan: Широта</span>
+<span class="sd">        :param lon: Долгота</span>
+<span class="sd">        :param top: Количество ближайших почтовых отделений в результате поиска</span>
+<span class="sd">        :param work_filter: Дополнительное ограничение по времени работы для поиска ОПС.</span>
+<span class="sd">        :param search_radius: Радиус для поиска (в километрах)</span>
+<span class="sd">        :param current_date_time: Текущее клиентское дата-время в таймзоне клиента.</span>
+<span class="sd">            Формат: yyyy-MM-dd&#39;T&#39;HH:mm:ss. Данный параметр используется для определения отделений,</span>
+<span class="sd">            работающих в данный момент, т.е. если эти данные нужны, параметр передавать обязательно!</span>
+<span class="sd">        :param hide_private: Исключать не публичные отделения. По-умолчанию не исключать (false).</span>
+<span class="sd">        :param filter_by_office_type: Фильтр по типам объектов в ответе.</span>
+<span class="sd">            true: ГОПС, СОПС, ПОЧТОМАТ. false: все. Значение по-умолчанию - true.</span>
+<span class="sd">        :param yandex_address: Адрес в том формате, в котором возвращает его сервис Яндекса для</span>
+<span class="sd">            адреса, указанного пользователем. Пример: Санкт-Петербург, улица Победы, 15к1.</span>
+<span class="sd">            Параметр необходим для определения является ли переданный адрес точным адресом</span>
+<span class="sd">            отделения. Требует также заполненного параметра geoObject.</span>
+<span class="sd">        :param geo_object: JSON-строка, содержащая объект GeoObject, получаемый для адреса в</span>
+<span class="sd">            сервисе Яндекса. См. api.yandex.ru.</span>
+<span class="sd">            Требует также заполненного параметра &#39;yandex-address&#39;.</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/postoffice/1.0/nearby&#39;</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">current_date_time</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+            <span class="n">current_date_time</span> <span class="o">=</span> <span class="n">current_date_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">yandex_address</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">geo_object</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Требуется указать geo_object&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">geo_object</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">yandex_address</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Требуется указать yandex_address&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">geo_object</span> <span class="ow">and</span> <span class="n">yandex_address</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">geo_object</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="s1">&#39;Параметр geo_object должен быть валидным json объектом&#39;</span><span class="p">)</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;latitude&#39;</span><span class="p">:</span> <span class="n">lan</span><span class="p">,</span>
+            <span class="s1">&#39;longitude&#39;</span><span class="p">:</span> <span class="n">lon</span><span class="p">,</span>
+            <span class="s1">&#39;top&#39;</span><span class="p">:</span> <span class="n">top</span><span class="p">,</span>
+            <span class="s1">&#39;filter&#39;</span><span class="p">:</span> <span class="n">work_filter</span><span class="p">,</span>
+            <span class="s1">&#39;search-radius&#39;</span><span class="p">:</span> <span class="n">search_radius</span><span class="p">,</span>
+            <span class="s1">&#39;current-date-time&#39;</span><span class="p">:</span> <span class="n">current_date_time</span><span class="p">,</span>
+            <span class="s1">&#39;hide-private&#39;</span><span class="p">:</span> <span class="n">hide_private</span><span class="p">,</span>
+            <span class="s1">&#39;filter-by-office-type&#39;</span><span class="p">:</span> <span class="n">filter_by_office_type</span><span class="p">,</span>
+            <span class="s1">&#39;yandex-address&#39;</span><span class="p">:</span> <span class="n">yandex_address</span><span class="p">,</span>
+            <span class="s1">&#39;geo-object&#39;</span><span class="p">:</span> <span class="n">geo_object</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Services.get_settlement_postoffices"><a class="viewcode-back" href="../../../pochta/api/services.html#pochta.api.services.Services.get_settlement_postoffices">[docs]</a>    <span class="k">def</span> <span class="nf">get_settlement_postoffices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">settlement</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                                   <span class="n">region</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                                   <span class="n">district</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск почтовых индексов в населённом пункте.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/services-postoffice-settlement.offices.codes</span>
+
+<span class="sd">        :param region: Область/край/республика, где расположен населённый пункт</span>
+<span class="sd">            (например Свердловская).</span>
+<span class="sd">        :param district: Район, где расположен населённый пункт</span>
+<span class="sd">            (для деревень, посёлков и т. д. - например Сухоложский).</span>
+<span class="sd">        :param settlement: Название населённого пункта (например Екатеринбург)</span>
+<span class="sd">        :return: Список почтовых индексов.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/postoffice/1.0/settlement.offices.codes&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;settlement&#39;</span><span class="p">:</span> <span class="n">settlement</span><span class="p">,</span>
+            <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="n">region</span><span class="p">,</span>
+            <span class="s1">&#39;district&#39;</span><span class="p">:</span> <span class="n">district</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

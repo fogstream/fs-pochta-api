@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.api.orders &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.api.orders</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.api.orders</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="k">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">from</span> <span class="nn">pochta.helpers</span> <span class="k">import</span> <span class="n">Order</span>
+<span class="kn">from</span> <span class="nn">pochta.utils</span> <span class="k">import</span> <span class="n">HTTPMethod</span>
+
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pochta</span> <span class="k">import</span> <span class="n">Delivery</span>
+
+
+<div class="viewcode-block" id="Orders"><a class="viewcode-back" href="../../../pochta/api/orders.html#pochta.api.orders.Orders">[docs]</a><span class="k">class</span> <span class="nc">Orders</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Методы API Заказов.</span>
+
+<span class="sd">    Используется через объект :class:`Delivery &lt;pochta.delivery.Delivery&gt;` или вручную.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Delivery</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Инициализация API Заказов.</span>
+
+<span class="sd">        :param client: API клиент Доставки</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
+
+<div class="viewcode-block" id="Orders.create_order"><a class="viewcode-back" href="../../../pochta/api/orders.html#pochta.api.orders.Orders.create_order">[docs]</a>    <span class="k">def</span> <span class="nf">create_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">orders</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Order</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Создание заказа.</span>
+
+<span class="sd">        Создает новый заказ. Автоматически рассчитывает и проставляет плату за пересылку.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/orders-creating_order</span>
+
+<span class="sd">        :param orders: Список заказов</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/user/backlog&#39;</span>
+
+        <span class="n">orders</span> <span class="o">=</span> <span class="p">[</span><span class="n">order</span><span class="o">.</span><span class="n">raw</span> <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">orders</span><span class="p">]</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">PUT</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">orders</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Orders.edit_order"><a class="viewcode-back" href="../../../pochta/api/orders.html#pochta.api.orders.Orders.edit_order">[docs]</a>    <span class="k">def</span> <span class="nf">edit_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">order</span><span class="p">:</span> <span class="n">Order</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Редактирование заказа.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/orders-editing_order</span>
+
+<span class="sd">        :param shipment_id: Внутренний идентификатор отправления</span>
+<span class="sd">        :param order: Измененный заказ</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/backlog/</span><span class="si">{shipment_id}</span><span class="s1">&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">PUT</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">order</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Orders.search_order"><a class="viewcode-back" href="../../../pochta/api/orders.html#pochta.api.orders.Orders.search_order">[docs]</a>    <span class="k">def</span> <span class="nf">search_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск заказа.</span>
+
+<span class="sd">        Ищет заказы по назначенному магазином идентификатору.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/orders-search_order</span>
+
+<span class="sd">        :param query: Буквенно-цифровой идентификатор отправления</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/backlog/search&#39;</span>
+
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">}</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Orders.search_order_by_id"><a class="viewcode-back" href="../../../pochta/api/orders.html#pochta.api.orders.Orders.search_order_by_id">[docs]</a>    <span class="k">def</span> <span class="nf">search_order_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">order_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Поиск заказа по идентификатору.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/orders-search_order_byid</span>
+
+<span class="sd">        :param order_id: Внутренний идентификатор отправления</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;/1.0/backlog/</span><span class="si">{order_id}</span><span class="s1">&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">GET</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Orders.delete_order"><a class="viewcode-back" href="../../../pochta/api/orders.html#pochta.api.orders.Orders.delete_order">[docs]</a>    <span class="k">def</span> <span class="nf">delete_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backlog_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Удаление заказа.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/orders-delete_new_order</span>
+
+<span class="sd">        :param backlog_ids: Список уникальных идентификаторов заказов</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/backlog&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">DELETE</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">backlog_ids</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Orders.shipment_to_backlog"><a class="viewcode-back" href="../../../pochta/api/orders.html#pochta.api.orders.Orders.shipment_to_backlog">[docs]</a>    <span class="k">def</span> <span class="nf">shipment_to_backlog</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">shipment_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Возврат заказов в &quot;Новые&quot;.</span>
+
+<span class="sd">        Метод переводит заказы из партии в раздел Новые. Партия должна быть в статусе CREATED.</span>
+
+<span class="sd">        https://otpravka.pochta.ru/specification#/orders-shipment_to_backlog</span>
+
+<span class="sd">        :param shipment_ids: Список внутренних идентификаторов заказов</span>
+<span class="sd">        :return: Результат операции</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;/1.0/user/backlog&#39;</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">HTTPMethod</span><span class="o">.</span><span class="n">POST</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">shipment_ids</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

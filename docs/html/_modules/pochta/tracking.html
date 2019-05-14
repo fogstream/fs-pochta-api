@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pochta.tracking &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/documents.html">Документы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/archive.html">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pochta/api/nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>pochta.tracking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pochta.tracking</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">zeep</span> <span class="k">import</span> <span class="n">CachingClient</span><span class="p">,</span> <span class="n">Settings</span>
+
+
+<div class="viewcode-block" id="Tracking"><a class="viewcode-back" href="../../pochta/tracking.html#pochta.tracking.Tracking">[docs]</a><span class="k">class</span> <span class="nc">Tracking</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    API клиент сервиса отслеживания посылок.</span>
+
+<span class="sd">    https://tracking.pochta.ru/specification</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">login</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Инициализация API клиента сервиса отслеживания посылок.</span>
+
+<span class="sd">        :param login: Логин от системы трекинга</span>
+<span class="sd">        :param password: Пароль от системы трекинга</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_login</span> <span class="o">=</span> <span class="n">login</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_password</span> <span class="o">=</span> <span class="n">password</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">CachingClient</span><span class="p">(</span>
+            <span class="s1">&#39;https://tracking.russianpost.ru/rtm34?wsdl&#39;</span><span class="p">,</span>
+            <span class="n">settings</span><span class="o">=</span><span class="n">Settings</span><span class="p">(</span><span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="Tracking.get_history"><a class="viewcode-back" href="../../pochta/tracking.html#pochta.tracking.Tracking.get_history">[docs]</a>    <span class="k">def</span> <span class="nf">get_history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">barcode</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        История операций над отправлением.</span>
+
+<span class="sd">        Метод getOperationHistory используется для получения информации о</span>
+<span class="sd">        конкретном отправлении. Метод возвращает подробную информацию</span>
+<span class="sd">        по всем операциям, совершенным над отправлением.</span>
+
+<span class="sd">        https://tracking.pochta.ru/specification#getOperationHistory</span>
+
+<span class="sd">        :param barcode: Идентификатор регистрируемого почтового отправления</span>
+<span class="sd">            в одном из форматов:</span>
+<span class="sd">            - внутрироссийский, состоящий из 14 символов (цифровой)</span>
+<span class="sd">            - международный, состоящий из 13 символов (буквенно-цифровой) в формате S10.</span>
+
+<span class="sd">        :return: Ответ метода getOperationHistory содержит список элементов</span>
+<span class="sd">            historyRecord. Каждый из них содержит информацию об одной операции над</span>
+<span class="sd">            отправлением. Если над отправлением еще не зарегистрировано ни одной</span>
+<span class="sd">            операции, то возвращается пустой список элементов historyRecord.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">getOperationHistory</span><span class="p">(</span>
+            <span class="n">OperationHistoryRequest</span><span class="o">=</span><span class="p">{</span>
+                <span class="s1">&#39;Barcode&#39;</span><span class="p">:</span> <span class="n">barcode</span><span class="p">,</span>
+                <span class="s1">&#39;MessageType&#39;</span><span class="p">:</span> <span class="s1">&#39;0&#39;</span>
+            <span class="p">},</span>
+            <span class="n">AuthorizationHeader</span><span class="o">=</span><span class="p">{</span>
+                <span class="s1">&#39;login&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_login</span><span class="p">,</span>
+                <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Tracking.get_order_events_for_mail"><a class="viewcode-back" href="../../pochta/tracking.html#pochta.tracking.Tracking.get_order_events_for_mail">[docs]</a>    <span class="k">def</span> <span class="nf">get_order_events_for_mail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">barcode</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        История операций с наложенным платежом.</span>
+
+<span class="sd">        Метод PostalOrderEventsForMail позволяет получить информацию об операциях с</span>
+<span class="sd">        наложенным платежом, который связан с конкретным почтовым отправлением.</span>
+
+<span class="sd">        https://tracking.pochta.ru/specification#PostalOrderEventsForMail</span>
+
+<span class="sd">        :param barcode: Идентификатор регистрируемого почтового отправления</span>
+<span class="sd">            в одном из форматов:</span>
+<span class="sd">            - внутрироссийский, состоящий из 14 символов (цифровой);</span>
+<span class="sd">            - международный, состоящий из 13 символов (буквенно-цифровой) в формате S10.</span>
+<span class="sd">        :return: Список событий</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">service</span><span class="o">.</span><span class="n">PostalOrderEventsForMail</span><span class="p">(</span>
+            <span class="n">PostalOrderEventsForMailInput</span><span class="o">=</span><span class="p">{</span>
+                <span class="s1">&#39;Barcode&#39;</span><span class="p">:</span> <span class="n">barcode</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="n">AuthorizationHeader</span><span class="o">=</span><span class="p">{</span>
+                <span class="s1">&#39;login&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_login</span><span class="p">,</span>
+                <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span></div></div>
+
+    <span class="c1"># TODO: Пакетный доступ</span>
+    <span class="c1"># def get_ticket(self, bar_codes: List[str]) -&gt; dict:</span>
+    <span class="c1">#     pass</span>
+    <span class="c1">#</span>
+    <span class="c1"># def get_history_for_ticket(self, ticket: str) -&gt; dict:</span>
+    <span class="c1">#     pass</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

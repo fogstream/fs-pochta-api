@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Архив &mdash; fs-pochta-api 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Поиск ОПС" href="services.html" />
+    <link rel="prev" title="Документы" href="documents.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> fs-pochta-api
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Введение</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Установка</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Использование</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Список изменений</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Модули</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../delivery.html">Delivery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tracking.html">Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums.html">Enums</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Методы API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="orders.html">Заказы</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batches.html">Партии</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Документы</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Архив</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services.html">Поиск ОПС</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lta.html">Долгосрочное хранение</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Настройки</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nogroup.html">Данные</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">fs-pochta-api</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Архив</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pochta.api.archive">
+<span id="id1"></span><h1>Архив<a class="headerlink" href="#module-pochta.api.archive" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pochta.api.archive.Archive">
+<em class="property">class </em><code class="descclassname">pochta.api.archive.</code><code class="descname">Archive</code><span class="sig-paren">(</span><em>client</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/archive.html#Archive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.archive.Archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Методы API Архива.</p>
+<p>Используется через объект <a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delivery</span></code></a> или вручную.</p>
+<p>Инициализация API Архива.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client</strong> (<a class="reference internal" href="../delivery.html#pochta.delivery.Delivery" title="pochta.delivery.Delivery"><em>Delivery</em></a>) – API клиент Доставки</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="pochta.api.archive.Archive.batch_to_archive">
+<code class="descname">batch_to_archive</code><span class="sig-paren">(</span><em>batch_names</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/archive.html#Archive.batch_to_archive"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.archive.Archive.batch_to_archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Перевод партии в архив.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/archive-batch_to_archive">https://otpravka.pochta.ru/specification#/archive-batch_to_archive</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_names</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Список с именами партий</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат перевода</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.archive.Archive.get_archive_batches">
+<code class="descname">get_archive_batches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/archive.html#Archive.get_archive_batches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.archive.Archive.get_archive_batches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Запрос данных о партиях в архиве.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/archive-search_batches">https://otpravka.pochta.ru/specification#/archive-search_batches</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Список партий в архиве</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="pochta.api.archive.Archive.revert_batch">
+<code class="descname">revert_batch</code><span class="sig-paren">(</span><em>batch_names</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pochta/api/archive.html#Archive.revert_batch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pochta.api.archive.Archive.revert_batch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Возврат партии из архива.</p>
+<p><a class="reference external" href="https://otpravka.pochta.ru/specification#/archive-revert_batch">https://otpravka.pochta.ru/specification#/archive-revert_batch</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>batch_names</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]) – Список с именами партий</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Результат перевода</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="services.html" class="btn btn-neutral float-right" title="Поиск ОПС" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="documents.html" class="btn btn-neutral float-left" title="Документы" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fogstream
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
