@@ -10,7 +10,7 @@ project = 'fs-pochta-api'
 copyright = '2019, Fogstream'
 author = 'Daniil Kharkov'
 master_doc = 'index'
-# html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_rtd_theme'
 source_suffix = ['.md', '.rst']
 exclude_patterns = ['_build']
 
@@ -21,16 +21,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
     'm2r',
+    'sphinx_git',
 ]
-
-html_theme_options = {
-    "show_powered_by": False,
-    "github_user": "fogstream",
-    "github_repo": "fs-pochta-api",
-    "github_banner": True,
-    "show_related": False,
-    "note_bg": "#FFF59C",
-}
 
 autodoc_default_flags = [':members:']
 autoclass_content = 'both'

@@ -1,13 +1,25 @@
+from __future__ import annotations
+
 from datetime import date
-from typing import List, Optional
+from typing import TYPE_CHECKING, List, Optional
 
 from pochta.enums import MailCategory, MailType
 from pochta.helpers import Order
 from pochta.utils import HTTPMethod
 
 
+if TYPE_CHECKING:
+    from pochta import Delivery
+
+
 class Batches:
-    def __init__(self, client) -> None:
+    """
+    Методы API Партий.
+
+    Используется через объект :class:`Delivery <pochta.delivery.Delivery>` или вручную.
+    """
+
+    def __init__(self, client: Delivery) -> None:
         """
         Инициализация API Партий.
 

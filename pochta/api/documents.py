@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from datetime import date
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
 
 from requests import Response
 
@@ -7,8 +9,18 @@ from pochta.enums import PrintType
 from pochta.utils import HTTPMethod
 
 
+if TYPE_CHECKING:
+    from pochta import Delivery
+
+
 class Documents:
-    def __init__(self, client) -> None:
+    """
+    Методы API Документов.
+
+    Используется через объект :class:`Delivery <pochta.delivery.Delivery>` или вручную.
+    """
+
+    def __init__(self, client: Delivery) -> None:
         """
         Инициализация API Документов.
 

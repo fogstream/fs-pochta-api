@@ -1,13 +1,25 @@
+from __future__ import annotations
+
 from datetime import datetime
 import json
-from typing import List, Optional, Union
+from typing import TYPE_CHECKING, List, Optional, Union
 
 from pochta.enums import PostofficeWorkType
 from pochta.utils import HTTPMethod
 
 
+if TYPE_CHECKING:
+    from pochta import Delivery
+
+
 class Services:
-    def __init__(self, client) -> None:
+    """
+    Методы API Поиска ОПС.
+
+    Используется через объект :class:`Delivery <pochta.delivery.Delivery>` или вручную.
+    """
+
+    def __init__(self, client: Delivery) -> None:
         """
         Инициализация API Поиска ОПС.
 

@@ -238,6 +238,7 @@ class Order:
         self.given_name = None
         self.surname = None
         self.middle_name = None
+        self.tel_address = None
         # endregion
 
         # region Адрес
@@ -261,12 +262,12 @@ class Order:
         self.num_address_type_to = None
         self.raw_address = None
         self.str_index_to = None
-        self.tel_address = None
         self.vladenie_to = None
         self.transport_type = None
         # endregion
 
         # region Таможенные декларация
+        self.customs = False
         self.customs_currency = None
         self.customs_entries = None
         self.customs_entries_type = None
@@ -276,9 +277,7 @@ class Order:
         # endregion
 
         # region Габариты
-        self.height = None
-        self.length = None
-        self.width = None
+        self.dimensions = None
         # endregion
 
         # region Вложения
@@ -300,8 +299,10 @@ class Order:
         self.wo_mail_rank = None
         # endregion
 
-    def set_recipient(self, recipient_name: str, given_name: str, surname: str,
-                      middle_name: Optional[str] = None) -> None:
+    def set_recipient(self, given_name: str, surname: str,
+                      middle_name: Optional[str] = None,
+                      recipient_name: Optional[str] = None,
+                      tel_address: Optional[int] = None) -> None:
         """
         Указать получателя.
 
@@ -309,11 +310,14 @@ class Order:
         :param given_name: Имя получателя
         :param surname: Фамилия получателя
         :param middle_name: Отчество получателя
+        :param tel_address: Телефон получателя (может быть обязательным для
+            некоторых типов отправлений)
         """
         self.recipient_name = recipient_name
         self.given_name = given_name
         self.surname = surname
         self.middle_name = middle_name
+        self.tel_address = tel_address
 
     def set_address(self, house_to: str, mail_direct: int,
                     region_to: str, place_to: str, street_to: str,
@@ -332,7 +336,6 @@ class Order:
                     num_address_type_to: Optional[str] = None,
                     raw_address: Optional[str] = None,
                     str_index_to: Optional[str] = None,
-                    tel_address: Optional[int] = None,
                     vladenie_to: Optional[str] = None,
                     transport_type: Optional[TransportType] = None) -> None:
         """
@@ -359,8 +362,6 @@ class Order:
             войсковая часть ЮЯ, полевая почта
         :param raw_address: Необработанный адрес получателя
         :param str_index_to: Почтовый индекс (буквенно-цифровой)
-        :param tel_address: Телефон получателя (может быть обязательным для
-            некоторых типов отправлений)
         :param vladenie_to: Часть здания: Владение
         :param transport_type: Возможный вид транспортировки (для международных отправлений).
         """
@@ -384,13 +385,11 @@ class Order:
         self.num_address_type_to = num_address_type_to
         self.raw_address = raw_address
         self.str_index_to = str_index_to
-        self.tel_address = tel_address
         self.vladenie_to = vladenie_to
         self.transport_type = transport_type
 
     def add_customs_declaration(self, currency: str, entries_type: EntryType,
                                 customs_entries: List[CustomsEntry],
-
                                 with_certificate: Optional[bool] = None,
                                 with_invoice: Optional[bool] = None,
                                 with_license: Optional[bool] = None) -> None:
@@ -404,6 +403,8 @@ class Order:
         :param with_invoice: Приложенные документы: счет-фактура
         :param with_license: Приложенные документы: лицензия
         """
+        self.customs = True
+
         self.customs_currency = currency
         self.customs_entries = customs_entries
         self.customs_entries_type = entries_type
@@ -419,9 +420,11 @@ class Order:
         :param length: Линейная длина (сантиметры)
         :param width: Линейная ширина (сантиметры)
         """
-        self.height = height
-        self.length = length
-        self.width = width
+        self.dimensions = {
+            'height': height,
+            'length': length,
+            'width': width,
+        }
 
     def add_items(self, items: List[Item]) -> None:
         """
@@ -429,7 +432,10 @@ class Order:
 
         :param items: Список вложений
         """
-        self.items = items
+        if not items:
+            self.items = items
+        else:
+            self.items.extend(items)
 
     def add_services(self, completeness_checking: Optional[bool] = None,
                      courier: Optional[bool] = None,
@@ -479,8 +485,23 @@ class Order:
 
         :return: Словарь с данными РПО
         """
-        customs_entries = [entry.raw for entry in self.customs_entries]
-        items = [item.raw for item in self.items]
+        if self.customs:
+            customs_entries = [entry.raw for entry in self.customs_entries]
+            customs_declaration = {
+                'currency': self.customs_currency,
+                'customs-entries': customs_entries,
+                'entries=type': self.customs_entries_type,
+                'with-certificate': self.customs_with_certificate,
+                'with-invoice': self.customs_with_invoice,
+                'with-license': self.customs_with_license,
+            }
+        else:
+            customs_declaration = None
+
+        if self.items:
+            items = {'items': [item.raw for item in self.items]}
+        else:
+            items = None
 
         return {
             'address-type-to': self.address_type_to,
@@ -489,26 +510,13 @@ class Order:
             'corpus-to': self.corpus_to,
             'completeness-checking': self.completeness_checking,
             'courier': self.courier,
-            'customs-declaration': {
-                'currency': self.customs_currency,
-                'customs-entries': customs_entries,
-                'entries=type': self.customs_entries_type,
-                'with-certificate': self.customs_with_certificate,
-                'with-invoice': self.customs_with_invoice,
-                'with-license': self.customs_with_license,
-            },
+            'customs-declaration': customs_declaration,
             'delivery-with-cod': self.delivery_with_cod,
-            'dimension': {
-                'height': self.height,
-                'length': self.length,
-                'width': self.width,
-            },
+            'dimension': self.dimensions,
             'envelope-type': self.envelope_type,
             'fragile': self.fragile,
             'given-name': self.given_name,
-            'goods': {
-                'items': items,
-            },
+            'goods': items,
             'hotel-to': self.hotel_to,
             'house-to': self.house_to,
             'index-to': self.index_to,

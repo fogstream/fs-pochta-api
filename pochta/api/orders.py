@@ -1,11 +1,23 @@
-from typing import List
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, List
 
 from pochta.helpers import Order
 from pochta.utils import HTTPMethod
 
 
+if TYPE_CHECKING:
+    from pochta import Delivery
+
+
 class Orders:
-    def __init__(self, client) -> None:
+    """
+    Методы API Заказов.
+
+    Используется через объект :class:`Delivery <pochta.delivery.Delivery>` или вручную.
+    """
+
+    def __init__(self, client: Delivery) -> None:
         """
         Инициализация API Заказов.
 

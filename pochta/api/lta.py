@@ -1,10 +1,22 @@
-from typing import List
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, List
 
 from pochta.utils import HTTPMethod
 
 
+if TYPE_CHECKING:
+    from pochta import Delivery
+
+
 class LTA:
-    def __init__(self, client) -> None:
+    """
+    Методы API Долгосрочного хранения.
+
+    Используется через объект :class:`Delivery <pochta.delivery.Delivery>` или вручную.
+    """
+
+    def __init__(self, client: Delivery) -> None:
         """
         Инициализация API Долгосрочного хранения.
 

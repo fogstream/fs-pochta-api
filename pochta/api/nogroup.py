@@ -1,4 +1,6 @@
-from typing import List, Optional
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, List, Optional
 
 from pochta.enums import (
     EntryType,
@@ -11,8 +13,18 @@ from pochta.helpers import Address, Name, Phone, Recipient
 from pochta.utils import HTTPMethod
 
 
+if TYPE_CHECKING:
+    from pochta import Delivery
+
+
 class NoGroup:
-    def __init__(self, client):
+    """
+    Методы API Данных.
+
+    Используется через объект :class:`Delivery <pochta.delivery.Delivery>` или вручную.
+    """
+
+    def __init__(self, client: Delivery):
         """
         Инициализация API Данных.
 

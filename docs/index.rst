@@ -1,7 +1,15 @@
 .. mdinclude:: ../README.md
 
-Руководство
+Оглавление
 ============
+
+.. toctree::
+    :caption: Введение
+    :maxdepth: 3
+
+    installation.md
+    quickstart.md
+    changelog
 
 .. toctree::
     :caption: Модули
@@ -16,11 +24,11 @@
     :caption: Методы API
     :maxdepth: 2
 
-    pochta/api/archive
+    pochta/api/orders
     pochta/api/batches
     pochta/api/documents
-    pochta/api/lta
-    pochta/api/nogroup
-    pochta/api/orders
+    pochta/api/archive
     pochta/api/services
+    pochta/api/lta
     pochta/api/settings
+    pochta/api/nogroup
