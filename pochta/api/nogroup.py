@@ -2,13 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, List, Optional
 
-from pochta.enums import (
-    EntryType,
-    MailCategory,
-    MailType,
-    PaymentType,
-    TransportType,
-)
+from pochta.enums import EntryType, MailCategory, MailType, PaymentType, TransportType
 from pochta.helpers import Address, Name, Phone, Recipient
 from pochta.utils import HTTPMethod
 

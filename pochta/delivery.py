@@ -2,16 +2,7 @@ from base64 import b64encode
 
 from requests import Request, Response, Session
 
-from .api import (
-    LTA,
-    Archive,
-    Batches,
-    Documents,
-    NoGroup,
-    Orders,
-    Services,
-    Settings,
-)
+from .api import LTA, Archive, Batches, Documents, NoGroup, Orders, Services, Settings
 from .utils import clean_data
 
 
