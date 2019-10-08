@@ -1,13 +1,7 @@
 from typing import List, Optional, Union
 
 from .enums import (
-    AddressType,
-    EntryType,
-    EnvelopeType,
-    MailCategory,
-    MailType,
-    PaymentType,
-    TransportType,
+    AddressType, EntryType, EnvelopeType, MailCategory, MailType, PaymentType, TransportType,
 )
 from .utils import _UniqId
 
