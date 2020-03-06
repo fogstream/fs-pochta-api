@@ -116,3 +116,4 @@ venv.bak/
 .mypy_cache/
 
 .idea
+_build

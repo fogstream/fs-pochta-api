@@ -426,7 +426,7 @@ class Order:
 
         :param items: Список вложений
         """
-        if not items:
+        if not self.items:
             self.items = items
         else:
             self.items.extend(items)

@@ -61,3 +61,5 @@ html_show_copyright = True
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'fs-pochta-apidoc'
+
+set_type_checking_flag = True

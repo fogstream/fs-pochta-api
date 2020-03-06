@@ -19,7 +19,7 @@ class _UniqId(ABC):
     @property
     @abstractmethod
     def raw(self) -> dict:
-        raise NotImplementedError()
+        pass
 
 
 def clean_data(data: Union[List, dict]) -> Union[List, dict]:
