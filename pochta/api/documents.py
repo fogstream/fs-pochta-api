@@ -193,7 +193,7 @@ class Documents:
         """
         url = f'/1.0/batch/{batch_name}/checkin'
 
-        res = self._client.request(HTTPMethod.GET, url)
+        res = self._client.request(HTTPMethod.POST, url)
         return res.json()
 
     def create_comp_check_form(self, batch_name: str) -> Response:
