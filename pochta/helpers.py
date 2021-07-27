@@ -484,7 +484,7 @@ class Order:
             customs_declaration = {
                 'currency': self.customs_currency,
                 'customs-entries': customs_entries,
-                'entries=type': self.customs_entries_type,
+                'entries-type': self.customs_entries_type,
                 'with-certificate': self.customs_with_certificate,
                 'with-invoice': self.customs_with_invoice,
                 'with-license': self.customs_with_license,
