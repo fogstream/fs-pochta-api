@@ -1,5 +1,5 @@
 zeep==3.4.0
-requests==2.22.0
+requests==2.31.0
 boltons==19.1.0
 isort==4.3.21
 flake8==3.7.8
